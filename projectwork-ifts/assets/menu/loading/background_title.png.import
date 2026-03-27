@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkpqg1ekq7uuj"
-path="res://.godot/imported/sprite_pad_lever.png-53621a2b8a5b0a336848a652f3c6a9ce.ctex"
+uid="uid://dysxmta77cc2w"
+path="res://.godot/imported/background_title.png-41448be6bcd6705fc6357c5bffd09fb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/sprite_pad_lever.png"
-dest_files=["res://.godot/imported/sprite_pad_lever.png-53621a2b8a5b0a336848a652f3c6a9ce.ctex"]
+source_file="res://assets/menu/loading/background_title.png"
+dest_files=["res://.godot/imported/background_title.png-41448be6bcd6705fc6357c5bffd09fb0.ctex"]
 
 [params]
 

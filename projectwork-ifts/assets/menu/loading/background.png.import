@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds3ivhsaprouu"
-path="res://.godot/imported/volume_lever.png-6b97ff69a60c6d111b3989da879aee75.ctex"
+uid="uid://cmc57uawy772k"
+path="res://.godot/imported/background.png-28bb19cfdeb166077ed509f18fa319be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/volume_lever.png"
-dest_files=["res://.godot/imported/volume_lever.png-6b97ff69a60c6d111b3989da879aee75.ctex"]
+source_file="res://assets/menu/loading/background.png"
+dest_files=["res://.godot/imported/background.png-28bb19cfdeb166077ed509f18fa319be.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7bpmg5nkgq0i"
-path="res://.godot/imported/button_home_pressed.png-88b133883b88e96e3ac4c10819886445.ctex"
+uid="uid://bkpqg1ekq7uuj"
+path="res://.godot/imported/sprite_pad_lever.png-fc60bf973e74e601060536367920dac2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_static/button_home_pressed.png"
-dest_files=["res://.godot/imported/button_home_pressed.png-88b133883b88e96e3ac4c10819886445.ctex"]
+source_file="res://assets/menu/ui/sprite_pad_lever.png"
+dest_files=["res://.godot/imported/sprite_pad_lever.png-fc60bf973e74e601060536367920dac2.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x6qgcih27yal"
-path="res://.godot/imported/button_shop_pressed.png-6b3713f71312a92ca8cfa6585e0711da.ctex"
+uid="uid://dss01ljguvr3s"
+path="res://.godot/imported/sprite_pad_base.png-da805d8b4ee0f3feab7756e8357f0341.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_static/button_shop_pressed.png"
-dest_files=["res://.godot/imported/button_shop_pressed.png-6b3713f71312a92ca8cfa6585e0711da.ctex"]
+source_file="res://assets/menu/ui/sprite_pad_base.png"
+dest_files=["res://.godot/imported/sprite_pad_base.png-da805d8b4ee0f3feab7756e8357f0341.ctex"]
 
 [params]
 

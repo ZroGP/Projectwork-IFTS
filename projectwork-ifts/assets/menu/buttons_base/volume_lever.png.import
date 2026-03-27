@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dss01ljguvr3s"
-path="res://.godot/imported/sprite_pad_base.png-356d42e3c95d29aad320e2221e092ad5.ctex"
+uid="uid://ds3ivhsaprouu"
+path="res://.godot/imported/volume_lever.png-69ffe997c8a9770dc627b832d7d9d4de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/sprite_pad_base.png"
-dest_files=["res://.godot/imported/sprite_pad_base.png-356d42e3c95d29aad320e2221e092ad5.ctex"]
+source_file="res://assets/menu/buttons_base/volume_lever.png"
+dest_files=["res://.godot/imported/volume_lever.png-69ffe997c8a9770dc627b832d7d9d4de.ctex"]
 
 [params]
 
