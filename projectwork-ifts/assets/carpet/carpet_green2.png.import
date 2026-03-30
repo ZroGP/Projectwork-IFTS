@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1qvoefhal4l2"
-path="res://.godot/imported/window1.png-e955b07b0ee6703e07e7c3fb1cf92ca4.ctex"
+uid="uid://cqcs65avrnmlt"
+path="res://.godot/imported/carpet_green2.png-c0c4980f49b9216eb2e4ac8e48c81c7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/room/window1.png"
-dest_files=["res://.godot/imported/window1.png-e955b07b0ee6703e07e7c3fb1cf92ca4.ctex"]
+source_file="res://assets/carpet/carpet_green2.png"
+dest_files=["res://.godot/imported/carpet_green2.png-c0c4980f49b9216eb2e4ac8e48c81c7c.ctex"]
 
 [params]
 

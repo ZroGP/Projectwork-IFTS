@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://8swg25h2deq6"]
+
+[ext_resource type="Texture2D" uid="uid://cb14ipthky0uw" path="res://assets/chair/chair_cream2.png" id="1_qeirx"]
+
+[node name="chair_cream2" type="StaticBody2D" unique_id=83055844]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520813003]
+texture = ExtResource("1_qeirx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=208256690]
+polygon = PackedVector2Array(9, -15, 9, 14, -9, 14, -9, -15)
