@@ -15,7 +15,7 @@ zoom = Vector2(3.6, 3.6)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1376329003]
 build_mode = 1
-polygon = PackedVector2Array(0, -26, -83, 14, -83, 30, 0, 71, 84, 30, 84, 13)
+polygon = PackedVector2Array(0, -21, -85, 21, -85, 31, 0, 71, 84, 30, 84, 20)
 
 [node name="room" type="Sprite2D" parent="." unique_id=683385401]
 texture = ExtResource("1_36trf")
