@@ -382,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_27ijw")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_down",
 "speed": 5.0
 }, {
@@ -399,7 +399,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xpbga")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_side",
 "speed": 5.0
 }, {
@@ -416,7 +416,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vjgtt")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_up",
 "speed": 5.0
 }, {
@@ -433,7 +433,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tsdpu")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_vertical_down",
 "speed": 5.0
 }, {
@@ -450,7 +450,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ce71t")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_vertical_up",
 "speed": 5.0
 }, {
@@ -569,7 +569,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Female" type="CharacterBody2D" unique_id=1587920895]
+[sub_resource type="CircleShape2D" id="CircleShape2D_3mf85"]
+
+[node name="Female" type="CharacterBody2D" unique_id=1587920895 groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_8yly0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052170119]
@@ -578,4 +581,11 @@ shape = SubResource("CapsuleShape2D_3mf85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=217503388]
 sprite_frames = SubResource("SpriteFrames_wxp6x")
-animation = &"walk_side_up"
+animation = &"interact_up"
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1811033210]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=214349984]
+shape = SubResource("CircleShape2D_3mf85")
