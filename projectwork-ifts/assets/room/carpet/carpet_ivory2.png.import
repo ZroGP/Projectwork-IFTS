@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb14ipthky0uw"
-path="res://.godot/imported/chair_cream2.png-28987bef80d82aa455dcfa74ae137a54.ctex"
+uid="uid://cymr2t7gbi70x"
+path="res://.godot/imported/carpet_ivory2.png-a189828e7dc2eb8a2e34a3338756d5a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chair/chair_cream2.png"
-dest_files=["res://.godot/imported/chair_cream2.png-28987bef80d82aa455dcfa74ae137a54.ctex"]
+source_file="res://assets/room/carpet/carpet_ivory2.png"
+dest_files=["res://.godot/imported/carpet_ivory2.png-a189828e7dc2eb8a2e34a3338756d5a8.ctex"]
 
 [params]
 
