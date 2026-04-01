@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ce1r0r5yibses"]
 
 [ext_resource type="Texture2D" uid="uid://5kukdvu7r1nq" path="res://assets/menu/buttons_base/sprite_menu_settings_base.png" id="1_gs4mq"]
-[ext_resource type="Script" uid="uid://dfynsgfm8axr4" path="res://scripts/popup_menu.gd" id="1_iidt0"]
+[ext_resource type="Script" uid="uid://chmaurjqhy58o" path="res://scripts/ui_menu.gd" id="1_n1cxb"]
+[ext_resource type="Texture2D" uid="uid://cp8aj07auhl6n" path="res://assets/menu/buttons_static/button_settings_static.png" id="1_uaiye"]
 [ext_resource type="Texture2D" uid="uid://jk6aypom0nuo" path="res://assets/menu/buttons_static/exit_x_static.png" id="2_5e4in"]
+[ext_resource type="Texture2D" uid="uid://cpggjgin3jw2a" path="res://assets/menu/buttons_pressed/button_settings_pressed.png" id="2_n1cxb"]
 [ext_resource type="Texture2D" uid="uid://15kwvcpk0unu" path="res://assets/menu/buttons_pressed/exit_x_pressed.png" id="3_5dgx2"]
 [ext_resource type="Texture2D" uid="uid://cms4qh4b2p61j" path="res://assets/menu/buttons_static/button_account_static.png" id="4_5dgx2"]
 [ext_resource type="Texture2D" uid="uid://ivao4snt0edi" path="res://assets/menu/buttons_pressed/button_account_pressed.png" id="5_1r0ig"]
@@ -12,6 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://cpoik0umiwmyr" path="res://assets/menu/buttons_pressed/button_credits_pressed.png" id="9_wlwaq"]
 [ext_resource type="Texture2D" uid="uid://cd7qxjucr7bdg" path="res://assets/menu/buttons_static/button_quit_static.png" id="10_q7at4"]
 [ext_resource type="Texture2D" uid="uid://ckjr0b2e1qwq0" path="res://assets/menu/buttons_pressed/button_quit_pressed.png" id="11_iidt0"]
+[ext_resource type="Texture2D" uid="uid://bh8j6728qy14v" path="res://assets/menu/buttons_base/sprite_credits_base.png" id="13_n1cxb"]
+[ext_resource type="Texture2D" uid="uid://wcycrxpcxmyo" path="res://assets/menu/buttons_base/sprite_languages_base.png" id="14_6prfo"]
+[ext_resource type="Texture2D" uid="uid://cfin6e3jc7xad" path="res://assets/menu/buttons_static/button_italiano_static.png" id="15_ao1qc"]
+[ext_resource type="Texture2D" uid="uid://by3fi00teqdrd" path="res://assets/menu/buttons_pressed/button_italiano_pressed.png" id="16_phw71"]
+[ext_resource type="Texture2D" uid="uid://b76pqjmepodct" path="res://assets/menu/buttons_static/button_english_static.png" id="17_phw71"]
+[ext_resource type="Texture2D" uid="uid://bysm5pwsvv8sl" path="res://assets/menu/buttons_pressed/button_english_pressed.png" id="18_p4cbm"]
+[ext_resource type="Texture2D" uid="uid://f2lfqt7jkaj0" path="res://assets/menu/buttons_base/sprite_quit_base.png" id="19_xsf2i"]
+[ext_resource type="Texture2D" uid="uid://31rgg8tfbhyk" path="res://assets/menu/buttons_static/button_no_static.png" id="20_p76uh"]
+[ext_resource type="Texture2D" uid="uid://bdpqqiuanikt6" path="res://assets/menu/buttons_pressed/button_no_pressed.png" id="21_qkkkl"]
+[ext_resource type="Texture2D" uid="uid://dl3mcykjlpvy8" path="res://assets/menu/buttons_static/button_yes_static.png" id="22_a43mx"]
+[ext_resource type="Texture2D" uid="uid://bt06xcuskrggr" path="res://assets/menu/buttons_pressed/button_yes_pressed.png" id="23_8m5dn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gercn"]
 texture = ExtResource("4_5dgx2")
@@ -58,23 +71,96 @@ texture = ExtResource("3_5dgx2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4cbm"]
 texture = ExtResource("2_5e4in")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8cix"]
+texture = ExtResource("1_uaiye")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8n12"]
+texture = ExtResource("2_n1cxb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yake"]
+texture = ExtResource("1_uaiye")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ej76"]
+texture = ExtResource("20_p76uh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mh5ls"]
+texture = ExtResource("21_qkkkl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yr2"]
+texture = ExtResource("20_p76uh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_678aq"]
+texture = ExtResource("22_a43mx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuleg"]
+texture = ExtResource("23_8m5dn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5tfp"]
+texture = ExtResource("22_a43mx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p76uh"]
+texture = ExtResource("2_5e4in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qkkkl"]
+texture = ExtResource("3_5dgx2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a43mx"]
+texture = ExtResource("2_5e4in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m5dn"]
+texture = ExtResource("2_5e4in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_got3c"]
+texture = ExtResource("3_5dgx2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bf1p"]
+texture = ExtResource("2_5e4in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7i02h"]
+texture = ExtResource("15_ao1qc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0flk0"]
+texture = ExtResource("16_phw71")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8aj4d"]
+texture = ExtResource("15_ao1qc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b6i1"]
+texture = ExtResource("17_phw71")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1wyc"]
+texture = ExtResource("18_p4cbm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4xe"]
+texture = ExtResource("17_phw71")
+
 [node name="UI_General" type="Control" unique_id=545853388]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_n1cxb")
 
 [node name="PopupMenu" type="MarginContainer" parent="." unique_id=1393050256]
-layout_mode = 0
-offset_left = 475.0
-offset_top = 219.0
-offset_right = 693.0
-offset_bottom = 335.0
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -116.0
+offset_right = 218.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_iidt0")
 
 [node name="BaseMenu" type="VBoxContainer" parent="PopupMenu" unique_id=1346739881]
 layout_mode = 2
@@ -86,20 +172,19 @@ size_flags_vertical = 3
 texture = ExtResource("1_gs4mq")
 
 [node name="Margin_Account" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=982840633]
-custom_minimum_size = Vector2(68, 26)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -96.000015
-offset_top = -41.0
-offset_right = -28.000015
-offset_bottom = -15.0
+offset_left = -183.0
+offset_top = -84.0
+offset_right = -47.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1.2005348, 1.1512821)
+scale = Vector2(1, 0.958)
 
 [node name="V_Account" type="VBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Account" unique_id=1849579688]
 layout_mode = 2
@@ -109,7 +194,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button_Account" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Account/V_Account/H_Account" unique_id=1541688738]
-custom_minimum_size = Vector2(68, 26)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_gercn")
@@ -123,10 +207,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -188.0
-offset_top = -41.0
-offset_right = -112.0
-offset_bottom = -15.0
+offset_left = -368.0
+offset_top = -84.0
+offset_right = -232.0
+offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -137,7 +221,8 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Languages/V_Languages/H_Languages" unique_id=1384286262]
+[node name="Button_Languages" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Languages/V_Languages/H_Languages" unique_id=1384286262]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(76, 26)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -152,10 +237,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -86.0
-offset_top = -11.0
-offset_right = -18.0
-offset_bottom = 15.0
+offset_left = -171.0
+offset_top = -18.0
+offset_right = -35.0
+offset_bottom = 34.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -167,6 +252,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Button_Credits" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Credits/V_Credits/H_Credits" unique_id=483827860]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_6aw08")
@@ -174,17 +260,18 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uaiye")
 theme_override_styles/hover = SubResource("StyleBoxTexture_n1cxb")
 
 [node name="Margin_Quit" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=1052073148]
-custom_minimum_size = Vector2(44, 26)
+unique_name_in_owner = true
+custom_minimum_size = Vector2(88, 52)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -69.0
-offset_top = 22.0
-offset_right = -25.0
-offset_bottom = 48.0
+offset_left = -144.0
+offset_top = 48.0
+offset_right = -56.0
+offset_bottom = 100.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.74038464, 0.74038464)
@@ -196,51 +283,211 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Quit/V_Quit/H_Quit" unique_id=351152050]
+[node name="Quit" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Quit/V_Quit/H_Quit" unique_id=351152050]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_rh3js")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_1a8lm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_6prfo")
 
-[node name="Exit_Settings" type="MarginContainer" parent="." unique_id=21078796]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 99.0
-offset_top = -117.0
-offset_right = 119.0
-offset_bottom = -97.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Exit_Settings" unique_id=221753992]
-layout_mode = 2
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Exit_Settings/VBoxContainer" unique_id=1966372094]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Exit_Settings/VBoxContainer/NinePatchRect" unique_id=58948182]
+[node name="Margin_Exit" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=21078796]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 23.0
-offset_bottom = 26.0
+offset_left = 405.0
+offset_top = -7.9999933
+offset_right = 445.0
+offset_bottom = 32.000008
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Exit_Settings/VBoxContainer/NinePatchRect/MarginContainer" unique_id=1097405949]
+[node name="V_Exit" type="VBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Exit" unique_id=221753992]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Exit_Settings/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer" unique_id=301542773]
+[node name="H_Exit" type="HBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Exit/V_Exit" unique_id=301542773]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Exit_Settings/VBoxContainer/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=514578543]
+[node name="Settings_Exit" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Exit/V_Exit/H_Exit" unique_id=514578543]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxTexture_ao1qc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_phw71")
 theme_override_styles/hover = SubResource("StyleBoxTexture_p4cbm")
+
+[node name="Settings_Button" type="VBoxContainer" parent="." unique_id=1857723285]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 479.0
+offset_top = -284.0
+offset_right = 511.0
+offset_bottom = -252.0
+scale = Vector2(1.5925984, 1.5925984)
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings_Button" unique_id=1132616965]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings_Button/MarginContainer" unique_id=1280922522]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings_Button/MarginContainer/VBoxContainer" unique_id=1283654891]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Settings" type="Button" parent="Settings_Button/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1081794445]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_u8cix")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m8n12")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1yake")
+
+[node name="Pop_Quit" type="MarginContainer" parent="." unique_id=360043627]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -116.0
+offset_right = 218.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="V_Quit" type="VBoxContainer" parent="Pop_Quit" unique_id=2134168693]
+layout_mode = 2
+
+[node name="H_Quit" type="HBoxContainer" parent="Pop_Quit/V_Quit" unique_id=1836548781]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Pop_Quit/V_Quit/H_Quit" unique_id=798223534]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("19_xsf2i")
+
+[node name="No" type="Button" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=835890409]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 241.0
+offset_top = 130.99998
+offset_right = 345.0
+offset_bottom = 178.99998
+theme_override_styles/normal = SubResource("StyleBoxTexture_8ej76")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mh5ls")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yr2")
+
+[node name="Yes" type="Button" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=1325829561]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 67.999985
+offset_top = 130.99998
+offset_right = 171.99998
+offset_bottom = 178.99998
+theme_override_styles/normal = SubResource("StyleBoxTexture_678aq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uuleg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s5tfp")
+
+[node name="Pop_Credits" type="MarginContainer" parent="." unique_id=1890702536]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -128.0
+offset_right = 226.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.997)
+
+[node name="V_Credits" type="VBoxContainer" parent="Pop_Credits" unique_id=989259134]
+layout_mode = 2
+
+[node name="H_Credits" type="HBoxContainer" parent="Pop_Credits/V_Credits" unique_id=40392272]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Credits" type="NinePatchRect" parent="Pop_Credits/V_Credits/H_Credits" unique_id=1294317859]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("13_n1cxb")
+
+[node name="Exit_Credits" type="Button" parent="Pop_Credits/V_Credits/H_Credits/Credits" unique_id=826839499]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 411.76465
+offset_top = 11.999996
+offset_right = 451.76465
+offset_bottom = 51.999996
+theme_override_styles/normal = SubResource("StyleBoxTexture_p76uh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qkkkl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a43mx")
+
+[node name="Pop_Language" type="MarginContainer" parent="." unique_id=744065573]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -218.0
+offset_top = -116.0
+offset_right = 218.0
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="V_Language" type="VBoxContainer" parent="Pop_Language" unique_id=1775961283]
+layout_mode = 2
+
+[node name="HLanguage" type="HBoxContainer" parent="Pop_Language/V_Language" unique_id=2082639857]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Nine_Language" type="NinePatchRect" parent="Pop_Language/V_Language/HLanguage" unique_id=1894619012]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("14_6prfo")
+
+[node name="Exit_Language" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=381140899]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 405.0
+offset_top = -7.999999
+offset_right = 445.0
+offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m5dn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_got3c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7bf1p")
+
+[node name="Italiano" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=526835215]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 42.0
+offset_top = 105.0
+offset_right = 182.0
+offset_bottom = 157.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_7i02h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0flk0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8aj4d")
+
+[node name="English" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=451192436]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 252.99998
+offset_top = 105.0
+offset_right = 393.0
+offset_bottom = 157.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2b6i1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c1wyc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tw4xe")

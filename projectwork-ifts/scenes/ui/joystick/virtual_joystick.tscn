@@ -30,7 +30,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2.116, 2.116)
-pivot_offset = Vector2(24, 24)
+pivot_offset = Vector2(21, 20.5)
 texture = ExtResource("2_gfp24")
 
 [node name="Stick" type="TextureRect" parent="." unique_id=417944173]
