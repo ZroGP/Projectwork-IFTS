@@ -80,7 +80,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0mew"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i7o8t"]
 texture = ExtResource("3_cwjmd")
 
 [node name="background" type="Control" unique_id=738483323]
@@ -95,7 +95,8 @@ texture = ExtResource("1_ku3bi")
 zoom = Vector2(3.6, 3.6)
 
 [node name="bar" type="Sprite2D" parent="." unique_id=298056870]
-position = Vector2(1, 45.000004)
+y_sort_enabled = true
+position = Vector2(0, 45.000004)
 scale = Vector2(1.55352, 1.5625001)
 texture = ExtResource("3_djmwj")
 
@@ -127,5 +128,5 @@ scale = Vector2(0.61, 0.61)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_i7o8t")
 theme_override_font_sizes/font_size = 12
-theme_override_styles/background = SubResource("StyleBoxTexture_c0mew")
+theme_override_styles/fill = SubResource("StyleBoxTexture_i7o8t")
 metadata/_edit_use_anchors_ = true
