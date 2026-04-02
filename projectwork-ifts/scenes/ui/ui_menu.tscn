@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bh8j6728qy14v" path="res://assets/menu/buttons_base/sprite_credits_base.png" id="13_n1cxb"]
 [ext_resource type="Texture2D" uid="uid://wcycrxpcxmyo" path="res://assets/menu/buttons_base/sprite_languages_base.png" id="14_6prfo"]
 [ext_resource type="Texture2D" uid="uid://cfin6e3jc7xad" path="res://assets/menu/buttons_static/button_italiano_static.png" id="15_ao1qc"]
-[ext_resource type="Texture2D" uid="uid://by3fi00teqdrd" path="res://assets/menu/buttons_pressed/button_italiano_pressed.png" id="16_phw71"]
 [ext_resource type="Texture2D" uid="uid://b76pqjmepodct" path="res://assets/menu/buttons_static/button_english_static.png" id="17_phw71"]
 [ext_resource type="Texture2D" uid="uid://bysm5pwsvv8sl" path="res://assets/menu/buttons_pressed/button_english_pressed.png" id="18_p4cbm"]
 [ext_resource type="Texture2D" uid="uid://f2lfqt7jkaj0" path="res://assets/menu/buttons_base/sprite_quit_base.png" id="19_xsf2i"]
@@ -25,114 +24,41 @@
 [ext_resource type="Texture2D" uid="uid://bdpqqiuanikt6" path="res://assets/menu/buttons_pressed/button_no_pressed.png" id="21_qkkkl"]
 [ext_resource type="Texture2D" uid="uid://dl3mcykjlpvy8" path="res://assets/menu/buttons_static/button_yes_static.png" id="22_a43mx"]
 [ext_resource type="Texture2D" uid="uid://bt06xcuskrggr" path="res://assets/menu/buttons_pressed/button_yes_pressed.png" id="23_8m5dn"]
+[ext_resource type="Texture2D" uid="uid://d2e0ui66a8n3n" path="res://assets/menu/buttons_base/sprite_account_male.png" id="26_p76uh"]
+[ext_resource type="Texture2D" uid="uid://ds3ivhsaprouu" path="res://assets/menu/buttons_base/volume_lever.png" id="27_qkkkl"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gercn"]
-texture = ExtResource("4_5dgx2")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f1bdu"]
-texture = ExtResource("5_1r0ig")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkkkl"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33axv"]
-texture = ExtResource("4_5dgx2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wlwaq"]
-texture = ExtResource("6_gercn")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7at4"]
-texture = ExtResource("7_f1bdu")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iidt0"]
-texture = ExtResource("6_gercn")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6aw08"]
-texture = ExtResource("8_33axv")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uaiye"]
-texture = ExtResource("9_wlwaq")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1cxb"]
-texture = ExtResource("8_33axv")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rh3js"]
-texture = ExtResource("10_q7at4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1a8lm"]
-texture = ExtResource("11_iidt0")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6prfo"]
-texture = ExtResource("10_q7at4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ao1qc"]
-texture = ExtResource("2_5e4in")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_phw71"]
-texture = ExtResource("3_5dgx2")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4cbm"]
-texture = ExtResource("2_5e4in")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8cix"]
-texture = ExtResource("1_uaiye")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m8n12"]
-texture = ExtResource("2_n1cxb")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1yake"]
-texture = ExtResource("1_uaiye")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ej76"]
-texture = ExtResource("20_p76uh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mh5ls"]
-texture = ExtResource("21_qkkkl")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yr2"]
-texture = ExtResource("20_p76uh")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_678aq"]
-texture = ExtResource("22_a43mx")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uuleg"]
-texture = ExtResource("23_8m5dn")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s5tfp"]
-texture = ExtResource("22_a43mx")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a43mx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p76uh"]
-texture = ExtResource("2_5e4in")
+texture = ExtResource("4_5dgx2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qkkkl"]
-texture = ExtResource("3_5dgx2")
+texture = ExtResource("5_1r0ig")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a43mx"]
-texture = ExtResource("2_5e4in")
+texture = ExtResource("4_5dgx2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8m5dn"]
-texture = ExtResource("2_5e4in")
+texture = ExtResource("6_gercn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_got3c"]
-texture = ExtResource("3_5dgx2")
+texture = ExtResource("7_f1bdu")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bf1p"]
-texture = ExtResource("2_5e4in")
+texture = ExtResource("6_gercn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7i02h"]
-texture = ExtResource("15_ao1qc")
+texture = ExtResource("8_33axv")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0flk0"]
-texture = ExtResource("16_phw71")
+texture = ExtResource("9_wlwaq")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8aj4d"]
-texture = ExtResource("15_ao1qc")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2b6i1"]
-texture = ExtResource("17_phw71")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1wyc"]
-texture = ExtResource("18_p4cbm")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4xe"]
-texture = ExtResource("17_phw71")
+texture = ExtResource("8_33axv")
 
 [node name="UI_General" type="Control" unique_id=545853388]
 layout_mode = 3
@@ -171,6 +97,33 @@ layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("1_gs4mq")
 
+[node name="Volume" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=756444751]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 108.0
+offset_right = 240.0
+offset_bottom = 124.01
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Volume" unique_id=141202251]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Volume/VBoxContainer" unique_id=2036837097]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HScrollBar" type="HSlider" parent="PopupMenu/BaseMenu/NinePatchRect/Volume/VBoxContainer/HBoxContainer" unique_id=1918445157]
+custom_minimum_size = Vector2(132.335, 15.685)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("27_qkkkl")
+theme_override_icons/grabber_highlight = ExtResource("27_qkkkl")
+theme_override_icons/grabber_disabled = ExtResource("27_qkkkl")
+theme_override_icons/tick = ExtResource("27_qkkkl")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_p76uh")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_qkkkl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_a43mx")
+
 [node name="Margin_Account" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=982840633]
 layout_mode = 1
 anchors_preset = 6
@@ -180,8 +133,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -183.0
 offset_top = -84.0
-offset_right = -47.0
-offset_bottom = -32.0
+offset_right = -37.975006
+offset_bottom = -33.515
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(1, 0.958)
@@ -193,12 +146,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button_Account" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Account/V_Account/H_Account" unique_id=1541688738]
+[node name="Button_Account" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Account/V_Account/H_Account" unique_id=178049123]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_gercn")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_f1bdu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_33axv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_p76uh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qkkkl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a43mx")
 
 [node name="Margin_Languages" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=1295560223]
 layout_mode = 1
@@ -221,14 +175,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button_Languages" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Languages/V_Languages/H_Languages" unique_id=1384286262]
+[node name="Button_Languages" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Languages/V_Languages/H_Languages" unique_id=986743053]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(76, 26)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_wlwaq")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_q7at4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_iidt0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8m5dn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_got3c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7bf1p")
 
 [node name="Margin_Credits" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=1869495480]
 layout_mode = 1
@@ -251,16 +204,15 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button_Credits" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Credits/V_Credits/H_Credits" unique_id=483827860]
+[node name="Button_Credits" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Credits/V_Credits/H_Credits" unique_id=1460577527]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_6aw08")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uaiye")
-theme_override_styles/hover = SubResource("StyleBoxTexture_n1cxb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7i02h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0flk0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8aj4d")
 
 [node name="Margin_Quit" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=1052073148]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(88, 52)
 layout_mode = 1
 anchors_preset = -1
@@ -283,13 +235,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Quit" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Quit/V_Quit/H_Quit" unique_id=351152050]
+[node name="Quit" type="TouchScreenButton" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Quit/V_Quit/H_Quit" unique_id=810578006]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_rh3js")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1a8lm")
-theme_override_styles/hover = SubResource("StyleBoxTexture_6prfo")
+position = Vector2(-1.350769, -18.909088)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("10_q7at4")
+texture_pressed = ExtResource("11_iidt0")
 
 [node name="Margin_Exit" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=21078796]
 layout_mode = 0
@@ -305,13 +256,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Settings_Exit" type="Button" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Exit/V_Exit/H_Exit" unique_id=514578543]
+[node name="Settings_Exit" type="TouchScreenButton" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Exit/V_Exit/H_Exit" unique_id=285225541]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_ao1qc")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_phw71")
-theme_override_styles/hover = SubResource("StyleBoxTexture_p4cbm")
+position = Vector2(2.0000002, 1)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("2_5e4in")
+texture_pressed = ExtResource("3_5dgx2")
 
 [node name="Settings_Button" type="VBoxContainer" parent="." unique_id=1857723285]
 unique_name_in_owner = true
@@ -333,13 +283,12 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Settings" type="Button" parent="Settings_Button/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1081794445]
+[node name="Settings" type="TouchScreenButton" parent="Settings_Button/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1170053878]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_u8cix")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_m8n12")
-theme_override_styles/hover = SubResource("StyleBoxTexture_1yake")
+position = Vector2(-5.6511345, 3.1395233)
+scale = Vector2(2.1191795, 2.1191795)
+texture_normal = ExtResource("1_uaiye")
+texture_pressed = ExtResource("2_n1cxb")
 
 [node name="Pop_Quit" type="MarginContainer" parent="." unique_id=360043627]
 unique_name_in_owner = true
@@ -369,27 +318,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("19_xsf2i")
 
-[node name="No" type="Button" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=835890409]
+[node name="No" type="TouchScreenButton" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=1263195307]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 241.0
-offset_top = 130.99998
-offset_right = 345.0
-offset_bottom = 178.99998
-theme_override_styles/normal = SubResource("StyleBoxTexture_8ej76")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_mh5ls")
-theme_override_styles/hover = SubResource("StyleBoxTexture_r8yr2")
+position = Vector2(244, 132)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("20_p76uh")
+texture_pressed = ExtResource("21_qkkkl")
 
-[node name="Yes" type="Button" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=1325829561]
+[node name="Yes" type="TouchScreenButton" parent="Pop_Quit/V_Quit/H_Quit/NinePatchRect" unique_id=7034591]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 67.999985
-offset_top = 130.99998
-offset_right = 171.99998
-offset_bottom = 178.99998
-theme_override_styles/normal = SubResource("StyleBoxTexture_678aq")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_uuleg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_s5tfp")
+position = Vector2(77, 132)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("22_a43mx")
+texture_pressed = ExtResource("23_8m5dn")
 
 [node name="Pop_Credits" type="MarginContainer" parent="." unique_id=1890702536]
 unique_name_in_owner = true
@@ -420,16 +361,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("13_n1cxb")
 
-[node name="Exit_Credits" type="Button" parent="Pop_Credits/V_Credits/H_Credits/Credits" unique_id=826839499]
+[node name="Exit_Credits" type="TouchScreenButton" parent="Pop_Credits/V_Credits/H_Credits/Credits" unique_id=556445838]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 411.76465
-offset_top = 11.999996
-offset_right = 451.76465
-offset_bottom = 51.999996
-theme_override_styles/normal = SubResource("StyleBoxTexture_p76uh")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qkkkl")
-theme_override_styles/hover = SubResource("StyleBoxTexture_a43mx")
+position = Vector2(422, -6.0180545)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("2_5e4in")
+texture_pressed = ExtResource("3_5dgx2")
 
 [node name="Pop_Language" type="MarginContainer" parent="." unique_id=744065573]
 unique_name_in_owner = true
@@ -459,35 +396,51 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("14_6prfo")
 
-[node name="Exit_Language" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=381140899]
+[node name="Exit_Language" type="TouchScreenButton" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=1022690612]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 405.0
-offset_top = -7.999999
-offset_right = 445.0
-offset_bottom = 32.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_8m5dn")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_got3c")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7bf1p")
+position = Vector2(406.99997, -7.9999995)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("2_5e4in")
+texture_pressed = ExtResource("3_5dgx2")
 
-[node name="Italiano" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=526835215]
+[node name="Italiano" type="TouchScreenButton" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=166696645]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 42.0
-offset_top = 105.0
-offset_right = 182.0
-offset_bottom = 157.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_7i02h")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0flk0")
-theme_override_styles/hover = SubResource("StyleBoxTexture_8aj4d")
+position = Vector2(253, 116)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("15_ao1qc")
+texture_pressed = ExtResource("15_ao1qc")
 
-[node name="English" type="Button" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=451192436]
+[node name="English" type="TouchScreenButton" parent="Pop_Language/V_Language/HLanguage/Nine_Language" unique_id=558917163]
 unique_name_in_owner = true
+position = Vector2(33, 116)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("17_phw71")
+texture_pressed = ExtResource("18_p4cbm")
+
+[node name="Pop_Account" type="MarginContainer" parent="." unique_id=1523058105]
+unique_name_in_owner = true
+visible = false
 layout_mode = 0
-offset_left = 252.99998
-offset_top = 105.0
-offset_right = 393.0
-offset_bottom = 157.0
-theme_override_styles/normal = SubResource("StyleBoxTexture_2b6i1")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_c1wyc")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tw4xe")
+offset_left = -218.0
+offset_top = -116.0
+offset_right = 218.0
+offset_bottom = 116.0
+
+[node name="VAccount" type="VBoxContainer" parent="Pop_Account" unique_id=651358062]
+layout_mode = 2
+
+[node name="HAccount" type="HBoxContainer" parent="Pop_Account/VAccount" unique_id=1433117895]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Pop_Account/VAccount/HAccount" unique_id=508554271]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("26_p76uh")
+
+[node name="Exit_Account" type="TouchScreenButton" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=123978609]
+unique_name_in_owner = true
+position = Vector2(409.99997, -6.9999995)
+scale = Vector2(3.5, 3.5)
+texture_normal = ExtResource("2_5e4in")
+texture_pressed = ExtResource("3_5dgx2")
