@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b762quhqwjhnl"]
+
+[ext_resource type="Texture2D" uid="uid://bhu3ixw6ynnbb" path="res://assets/room/chair/chair_lilla1.png" id="1_12kfd"]
+
+[node name="chair_lilla1" type="StaticBody2D" unique_id=1999875556]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=243868028]
+polygon = PackedVector2Array(2, -10, 4, -4, 9, -2, 9, 14, -9, 14, -9, -15)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1584603413]
+texture = ExtResource("1_12kfd")

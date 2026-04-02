@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dbbu0oasudgli"]
+
+[ext_resource type="Texture2D" uid="uid://b7w2tnx2a6q7k" path="res://assets/room/carpet/carpet_red2.png" id="1_3bgty"]
+
+[node name="carpet_red2" type="StaticBody2D" unique_id=507532169]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=642929179]
+texture = ExtResource("1_3bgty")

@@ -4,8 +4,8 @@
 
 [node name="chair_cream1" type="StaticBody2D" unique_id=1999875556]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=243868028]
+polygon = PackedVector2Array(2, -10, 4, -4, 9, -2, 9, 14, -9, 14, -9, -15)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1584603413]
 texture = ExtResource("1_057w6")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=243868028]
-polygon = PackedVector2Array(9, -15, 9, 14, -9, 14, -9, -15)

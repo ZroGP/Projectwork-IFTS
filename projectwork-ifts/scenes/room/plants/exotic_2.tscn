@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://biyx4dws4ncnw"]
+
+[ext_resource type="Texture2D" uid="uid://dwnko2f3bce72" path="res://assets/room/plants/exotic2.png" id="1_jqq2y"]
+
+[node name="exotic2" type="StaticBody2D" unique_id=1354222387]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=905266132]
+polygon = PackedVector2Array(-10, 8, 10, 8, 10, -8, -10, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=793014228]
+texture = ExtResource("1_jqq2y")

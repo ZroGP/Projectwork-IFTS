@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bgodt8a4k7qqh"]
+
+[ext_resource type="Texture2D" uid="uid://bwshc7uws5qif" path="res://assets/room/pc/pc_white1.png" id="1_1xwic"]
+
+[node name="pc_white1" type="StaticBody2D" unique_id=593570499]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=560793543]
+polygon = PackedVector2Array(-3, -19, -17, -10, -17, 9, 4, 19, 17, 12, 17, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=195803735]
+texture = ExtResource("1_1xwic")

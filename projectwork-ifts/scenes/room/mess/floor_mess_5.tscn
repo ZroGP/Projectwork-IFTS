@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://brtre8p1reac7"]
+
+[ext_resource type="Texture2D" uid="uid://duwcp7rb2s44y" path="res://assets/room/mess/floor_mess5.png" id="1_hcw80"]
+
+[node name="floor_mess5" type="CharacterBody2D" unique_id=172970162 groups=["interactable"]]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=524318414]
+polygon = PackedVector2Array(-7, 0, 0, -5, 7, -1, -3, 6)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=139803288]
+texture = ExtResource("1_hcw80")
