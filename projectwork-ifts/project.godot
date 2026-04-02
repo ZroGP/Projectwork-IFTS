@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectworkIFTS"
-run/main_scene="uid://boudpnv1nk301"
+run/main_scene="uid://dv3vg0q5wdawb"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

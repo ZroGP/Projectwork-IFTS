@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3fuwvpw1p6lm"
+path="res://.godot/imported/Filo Starquez - Park Vibes (freetouse.com).mp3-8b6d62d29dfad84d3661933a7e54ed08.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3"
+dest_files=["res://.godot/imported/Filo Starquez - Park Vibes (freetouse.com).mp3-8b6d62d29dfad84d3661933a7e54ed08.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

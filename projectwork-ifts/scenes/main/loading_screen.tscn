@@ -2,44 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cmc57uawy772k" path="res://assets/menu/loading/background.png" id="1_ku3bi"]
 [ext_resource type="Texture2D" uid="uid://d3dqcsqhpa225" path="res://assets/menu/loading/loading_people.png" id="2_5phy8"]
+[ext_resource type="Script" uid="uid://dt4wpqs5mit8l" path="res://scripts/loading_screen.gd" id="2_cwjmd"]
+[ext_resource type="Texture2D" uid="uid://nr7kvn88sql1" path="res://assets/menu/loading/loading_charging_bar.png" id="3_cwjmd"]
 [ext_resource type="Texture2D" uid="uid://cbgi3en3sb7j8" path="res://assets/menu/loading/loading_base_bar.png" id="3_djmwj"]
 [ext_resource type="Texture2D" uid="uid://dysxmta77cc2w" path="res://assets/menu/loading/background_title.png" id="4_ji4ua"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cwjmd"]
-atlas = ExtResource("2_5phy8")
-region = Rect2(0, 0, 59, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c0mew"]
-atlas = ExtResource("2_5phy8")
-region = Rect2(59, 0, 59, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i7o8t"]
-atlas = ExtResource("2_5phy8")
-region = Rect2(118, 0, 59, 19)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r7rlp"]
-atlas = ExtResource("2_5phy8")
-region = Rect2(177, 0, 59, 19)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gcv3i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cwjmd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c0mew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i7o8t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r7rlp")
-}],
-"loop": true,
-"name": &"loading",
-"speed": 5.0
-}]
+[ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="6_i7o8t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je32c"]
 atlas = ExtResource("4_ji4ua")
@@ -77,22 +44,58 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="background" type="Sprite2D" unique_id=1518903512]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji4ua"]
+atlas = ExtResource("2_5phy8")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwjmd"]
+atlas = ExtResource("2_5phy8")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0mew"]
+atlas = ExtResource("2_5phy8")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7o8t"]
+atlas = ExtResource("2_5phy8")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7rlp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji4ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwjmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0mew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7o8t")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0mew"]
+texture = ExtResource("3_cwjmd")
+
+[node name="background" type="Control" unique_id=738483323]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2_cwjmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099129587]
 texture = ExtResource("1_ku3bi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1705331050]
 zoom = Vector2(3.6, 3.6)
 
-[node name="characters" type="AnimatedSprite2D" parent="." unique_id=617575893]
-position = Vector2(-2, 17.734375)
-scale = Vector2(1.65625, 1.65625)
-sprite_frames = SubResource("SpriteFrames_gcv3i")
-animation = &"loading"
-autoplay = "loading"
-frame_progress = 0.682847
-
 [node name="bar" type="Sprite2D" parent="." unique_id=298056870]
-position = Vector2(0, 44.73438)
+position = Vector2(1, 45.000004)
 scale = Vector2(1.55352, 1.5625001)
 texture = ExtResource("3_djmwj")
 
@@ -102,3 +105,27 @@ scale = Vector2(0.90625, 0.90625)
 sprite_frames = SubResource("SpriteFrames_enmtx")
 autoplay = "default"
 frame_progress = 0.6954804
+
+[node name="characters" type="AnimatedSprite2D" parent="." unique_id=627620906]
+position = Vector2(9.536743e-07, 9.000002)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_r7rlp")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.70956814
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=362172609]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -52.52
+offset_top = 41.08
+offset_right = 123.979996
+offset_bottom = 54.08
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.61, 0.61)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_i7o8t")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxTexture_c0mew")
+metadata/_edit_use_anchors_ = true
