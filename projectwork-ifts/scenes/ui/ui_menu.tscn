@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://d2e0ui66a8n3n" path="res://assets/menu/buttons_base/sprite_account_male.png" id="26_p76uh"]
 [ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="27_a43mx"]
 [ext_resource type="Texture2D" uid="uid://ds3ivhsaprouu" path="res://assets/menu/buttons_base/volume_lever.png" id="27_qkkkl"]
+[ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -533,7 +534,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nwkdi")
 
 [node name="Pop_Account" type="MarginContainer" parent="." unique_id=1523058105]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = -218.0
 offset_top = -116.0
@@ -562,6 +562,16 @@ offset_bottom = 33.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_o31q1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ay826")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dl3mx")
+
+[node name="Label" type="Label" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=1522809172]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 123.0
+offset_right = 716.0
+offset_bottom = 134.0
+theme_override_fonts/font = ExtResource("28_8m5dn")
+theme_override_font_sizes/font_size = 10
+text = "0"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=226592893]
 stream = ExtResource("27_a43mx")

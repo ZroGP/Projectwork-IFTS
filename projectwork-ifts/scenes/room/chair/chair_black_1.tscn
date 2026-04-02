@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://tqib7cf7fm7w" path="res://assets/room/chair/chair_black1.png" id="1_uw5d1"]
 
 [node name="chair_black1" type="StaticBody2D" unique_id=1999875556]
+scale = Vector2(0.7, 0.7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=243868028]
+scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(2, -10, 4, -4, 9, -2, 9, 14, -9, 14, -9, -15)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1584603413]

@@ -5,7 +5,7 @@
 [node name="cactus1" type="StaticBody2D" unique_id=1316577571]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1821846190]
-polygon = PackedVector2Array(4, 8, -4, 8, -4, -8, 4, -8)
+polygon = PackedVector2Array(4, 8, -4, 8, -4, 1, 4, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=371852150]
 texture = ExtResource("1_1kauo")

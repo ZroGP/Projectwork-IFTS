@@ -3,9 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://bdk8btijlywu7" path="res://assets/room/mess/floor_mess7.png" id="1_36eqa"]
 
 [node name="floor_mess7" type="CharacterBody2D" unique_id=1844896288 groups=["interactable"]]
+scale = Vector2(0.6, 0.6)
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1885143781]
+scale = Vector2(0.6, 0.6)
 polygon = PackedVector2Array(0, -13, -13, -6, -13, 7, 0, 13, 13, 7, 13, -6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141627079]

@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_interactable_entered(body: Node2D) -> void:
 	if body.is_in_group("interactable"):
 		nearby_interactables.append(body)
+		globals.remove_mess = body 
 
 func _on_interactable_exited(body: Node2D) -> void:
 	nearby_interactables.erase(body)
@@ -46,6 +47,9 @@ func interact() -> void:
 
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
+	globals.coins += 1
+	print(globals.coins)
+	$Timer.start()
 	await $AnimatedSprite2D.animation_finished
 	is_interacting = false
 	$AnimatedSprite2D.play(&"idle_down")
@@ -109,3 +113,7 @@ func _animate() -> void:
 		7:  anim = &"walk_side_up"
 
 	$AnimatedSprite2D.play(anim)
+
+
+func _on_timer_timeout() -> void:
+	globals.remove_mess.position.x=100000000

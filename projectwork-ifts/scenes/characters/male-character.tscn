@@ -6,10 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cfu5f10l2uawt" path="res://assets/charachters/male/male_yellow_shirt/male_interact.png" id="2_rw2ni"]
 [ext_resource type="Texture2D" uid="uid://bvhsub051kcd7" path="res://assets/charachters/male/male_yellow_shirt/male_walk.png" id="3_rw2ni"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x467g"]
-radius = 3.0
-height = 8.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_opfsr"]
 atlas = ExtResource("1_y6b3s")
 region = Rect2(0, 0, 20, 20)
@@ -569,13 +565,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Male" type="CharacterBody2D" unique_id=1587920895]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p66pi"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xudbq"]
+
+[node name="Male" type="CharacterBody2D" unique_id=1587920895 groups=["player"]]
 script = ExtResource("1_opfsr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1037680944]
-position = Vector2(0, 5)
-shape = SubResource("CapsuleShape2D_x467g")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=960677456]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=960677456 groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_y8rnv")
 animation = &"idle_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779579311 groups=["player"]]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_p66pi")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1583888143 groups=["player"]]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=554436611 groups=["player"]]
+shape = SubResource("CircleShape2D_xudbq")
