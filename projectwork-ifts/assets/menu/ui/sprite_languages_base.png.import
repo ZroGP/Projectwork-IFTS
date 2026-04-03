@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds3ivhsaprouu"
-path="res://.godot/imported/volume_lever.png-69ffe997c8a9770dc627b832d7d9d4de.ctex"
+uid="uid://wcycrxpcxmyo"
+path="res://.godot/imported/sprite_languages_base.png-244eb8383d84574d2b12f073e908dc5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_base/volume_lever.png"
-dest_files=["res://.godot/imported/volume_lever.png-69ffe997c8a9770dc627b832d7d9d4de.ctex"]
+source_file="res://assets/menu/ui/sprite_languages_base.png"
+dest_files=["res://.godot/imported/sprite_languages_base.png-244eb8383d84574d2b12f073e908dc5f.ctex"]
 
 [params]
 

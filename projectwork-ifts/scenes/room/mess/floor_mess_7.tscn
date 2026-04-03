@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://bvk7mwaecbd6b"]
 
+[ext_resource type="Script" uid="uid://d0rjshda14pob" path="res://scripts/floor_mess.gd" id="1_3ej04"]
 [ext_resource type="Texture2D" uid="uid://bdk8btijlywu7" path="res://assets/room/mess/floor_mess7.png" id="1_36eqa"]
 
-[node name="floor_mess7" type="CharacterBody2D" unique_id=1844896288 groups=["interactable"]]
+[node name="floor_mess7" type="Area2D" unique_id=1434981320 groups=["interactable"]]
 scale = Vector2(0.6, 0.6)
 collision_layer = 2
+script = ExtResource("1_3ej04")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1885143781]
 scale = Vector2(0.6, 0.6)

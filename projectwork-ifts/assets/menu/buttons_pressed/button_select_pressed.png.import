@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi1v4x6sy2s02"
-path="res://.godot/imported/sprite_account_female.png-72c4da29ac052abc7bb494fdd07d5126.ctex"
+uid="uid://evgoup78v0pj"
+path="res://.godot/imported/button_select_pressed.png-d4cb7a91cf7e07434b289f1e1fdefc20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_base/sprite_account_female.png"
-dest_files=["res://.godot/imported/sprite_account_female.png-72c4da29ac052abc7bb494fdd07d5126.ctex"]
+source_file="res://assets/menu/buttons_pressed/button_select_pressed.png"
+dest_files=["res://.godot/imported/button_select_pressed.png-d4cb7a91cf7e07434b289f1e1fdefc20.ctex"]
 
 [params]
 

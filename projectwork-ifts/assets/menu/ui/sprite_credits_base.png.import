@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wcycrxpcxmyo"
-path="res://.godot/imported/sprite_languages_base.png-5351fe234015e4d11cec197163a0d3cc.ctex"
+uid="uid://bh8j6728qy14v"
+path="res://.godot/imported/sprite_credits_base.png-65c396a68d0f600654113292d118c03b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_base/sprite_languages_base.png"
-dest_files=["res://.godot/imported/sprite_languages_base.png-5351fe234015e4d11cec197163a0d3cc.ctex"]
+source_file="res://assets/menu/ui/sprite_credits_base.png"
+dest_files=["res://.godot/imported/sprite_credits_base.png-65c396a68d0f600654113292d118c03b.ctex"]
 
 [params]
 

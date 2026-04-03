@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://l7vsuoxk63bj" path="res://assets/charachters/female/female_red_shirt/female_interact.png" id="2_40ykn"]
 [ext_resource type="Texture2D" uid="uid://b3t2kduc6gehv" path="res://assets/charachters/female/female_red_shirt/female_rotate.png" id="3_8yly0"]
 [ext_resource type="Texture2D" uid="uid://chkit1s0fmubi" path="res://assets/charachters/female/female_red_shirt/female_walk.png" id="4_c052x"]
+[ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="6_jvi8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnd63"]
 atlas = ExtResource("1_gvmuv")
@@ -575,9 +576,6 @@ height = 10.0
 collision_mask = 3
 script = ExtResource("1_8yly0")
 
-[node name="Timer" type="Timer" parent="." unique_id=2065039306]
-wait_time = 5.0
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=217503388 groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_wxp6x")
 animation = &"interact_up"
@@ -594,4 +592,4 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=214349984 groups=["player"]]
 shape = SubResource("CircleShape2D_3mf85")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="floor_mess4" parent="InteractionArea" unique_id=172970162 instance=ExtResource("6_jvi8x")]

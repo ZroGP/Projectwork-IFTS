@@ -1,11 +1,14 @@
-[gd_scene format=3 uid="uid://u73vpwxj8ryx"]
+[gd_scene format=3 uid="uid://d2urybn2nac45"]
 
 [ext_resource type="Texture2D" uid="uid://c0dgbvp8ctcxw" path="res://assets/room/mess/floor_mess2.png" id="1_rydaf"]
+[ext_resource type="Script" uid="uid://d0rjshda14pob" path="res://scripts/floor_mess.gd" id="1_vdhxf"]
 
-[node name="floor_mess2" type="StaticBody2D" unique_id=1240562664]
+[node name="floor_mess2" type="Area2D" unique_id=1739228694 groups=["interactable"]]
+collision_layer = 2
+script = ExtResource("1_vdhxf")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=86977983]
-polygon = PackedVector2Array(1, 6, -7, 4, -2, -1, 5, 2)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=99116997]
+polygon = PackedVector2Array(2, 6, -7, 2, -7, -3, -3, -6, 3, -6, 7, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=139803288]
 texture = ExtResource("1_rydaf")

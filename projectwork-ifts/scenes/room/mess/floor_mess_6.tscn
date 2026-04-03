@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://dvgw4hp4u3bvs"]
 
 [ext_resource type="Texture2D" uid="uid://drs3tmceyd20i" path="res://assets/room/mess/floor_mess6.png" id="1_rrmpc"]
+[ext_resource type="Script" uid="uid://d0rjshda14pob" path="res://scripts/floor_mess.gd" id="1_tj6gm"]
 
-[node name="floor_mess6" type="CharacterBody2D" unique_id=12231581 groups=["interactable"]]
+[node name="floor_mess6" type="Area2D" unique_id=814481252 groups=["interactable"]]
 collision_layer = 2
+script = ExtResource("1_tj6gm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=300382223]
 polygon = PackedVector2Array(0, -6, -6, -1, 3, 6, 7, -1)

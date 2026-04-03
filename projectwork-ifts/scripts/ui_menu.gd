@@ -93,3 +93,7 @@ func _on_exit_account_pressed():
 	account_popup.hide()
 	menu_container.show()
 	
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

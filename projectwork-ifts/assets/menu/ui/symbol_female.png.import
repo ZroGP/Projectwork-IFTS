@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh8j6728qy14v"
-path="res://.godot/imported/sprite_credits_base.png-3dbbe31ebdddf003195858b93304003a.ctex"
+uid="uid://cy318a0nbx56"
+path="res://.godot/imported/symbol_female.png-a0ea726b1ee2ce01dee1d72af50a63d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/buttons_base/sprite_credits_base.png"
-dest_files=["res://.godot/imported/sprite_credits_base.png-3dbbe31ebdddf003195858b93304003a.ctex"]
+source_file="res://assets/menu/ui/symbol_female.png"
+dest_files=["res://.godot/imported/symbol_female.png-a0ea726b1ee2ce01dee1d72af50a63d2.ctex"]
 
 [params]
 

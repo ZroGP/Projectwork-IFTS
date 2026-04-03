@@ -1,38 +1,33 @@
 extends CharacterBody2D
 const SPEED: float = 30.0
-
 var direction: Vector2
 var nearby_interactables: Array[Node2D] = []
 var is_interacting: bool = false
 
 func _ready() -> void:
-	$InteractionArea.body_entered.connect(_on_interactable_entered)
-	$InteractionArea.body_exited.connect(_on_interactable_exited)
+	$InteractionArea.area_entered.connect(_on_interactable_entered)
+	$InteractionArea.area_exited.connect(_on_interactable_exited)
 
-func _on_interactable_entered(body: Node2D) -> void:
-	if body.is_in_group("interactable"):
-		nearby_interactables.append(body)
-		globals.remove_mess = body 
+func _on_interactable_entered(area: Area2D) -> void:
+	if area.is_in_group("interactable"):
+		nearby_interactables.append(area)
 
-func _on_interactable_exited(body: Node2D) -> void:
-	nearby_interactables.erase(body)
+func _on_interactable_exited(area: Area2D) -> void:
+	nearby_interactables.erase(area)
 
 func interact() -> void:
 	if nearby_interactables.is_empty() or is_interacting:
 		return
-
 	var closest: Node2D = _get_closest(nearby_interactables)
-	var dir: Vector2 = (closest.global_position - global_position).normalized()
+	nearby_interactables.erase(closest)
 
-	
+	var dir: Vector2 = (closest.global_position - global_position).normalized()
 	$AnimatedSprite2D.flip_h = dir.x < 0.0
 
-	
 	var angle := dir.angle()
 	var sector := int(round(angle / (PI / 4.0))) % 8
 	if sector < 0:
 		sector += 8
-
 	var interact_anim: StringName
 	match sector:
 		0:  interact_anim = &"interact_side"
@@ -44,18 +39,16 @@ func interact() -> void:
 		6:  interact_anim = &"interact_up"
 		7:  interact_anim = &"interact_vertical_up"
 
-
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
 	globals.coins += 1
 	print(globals.coins)
-	$Timer.start()
+
 	await $AnimatedSprite2D.animation_finished
 	is_interacting = false
 	$AnimatedSprite2D.play(&"idle_down")
 	_animate()
-	
-	
+
 	if closest.has_method("on_interact"):
 		closest.on_interact(self)
 
@@ -77,7 +70,6 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	_animate()
 
-
 func _animate() -> void:
 	if direction == Vector2.ZERO:
 		var current := $AnimatedSprite2D.animation as String
@@ -91,16 +83,11 @@ func _animate() -> void:
 				"walk_up":        idle_anim = &"idle_up"
 			$AnimatedSprite2D.play(idle_anim)
 		return
-
-
 	$AnimatedSprite2D.flip_h = direction.x < 0.0
-
-
 	var angle := direction.angle()
 	var sector := int(round(angle / (PI / 4.0))) % 8
 	if sector < 0:
 		sector += 8
-
 	var anim: StringName
 	match sector:
 		0:  anim = &"walk_side"
@@ -111,9 +98,4 @@ func _animate() -> void:
 		5:  anim = &"walk_side_up"
 		6:  anim = &"walk_up"
 		7:  anim = &"walk_side_up"
-
 	$AnimatedSprite2D.play(anim)
-
-
-func _on_timer_timeout() -> void:
-	globals.remove_mess.position.x=100000000
