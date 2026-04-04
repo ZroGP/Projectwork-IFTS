@@ -24,6 +24,11 @@ extends Control
 @onready var account_popup = %Pop_Account
 @onready var exit_account = %Exit_Account
 
+# Home/Shop
+@onready var shop_button = %Button_Shop
+
+@onready var popup_shop = %Popup_Shop
+
 
 func _ready():
 	#Settings
@@ -52,7 +57,14 @@ func _ready():
 	exit_account.pressed.connect(_on_exit_account_pressed)
 	
 	account_popup.hide()
+	
+	# SHop/Home
+	shop_button.pressed.connect(_on_shop_button_pressed)
+	
+	popup_shop.hide()
+	
 func _on_settings_button_pressed():
+	popup_shop.hide()
 	menu_container.show()
 	
 func _on_exit_button_pressed():
@@ -93,7 +105,22 @@ func _on_exit_account_pressed():
 	account_popup.hide()
 	menu_container.show()
 	
-
-
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	
+func _on_shop_button_pressed():
+	if popup_shop.visible:
+		popup_shop.hide()
+	else:
+		popup_shop.show()
+		menu_container.hide()
+		
+		
+		
+		
+	
+	
+	
+	
+	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	%Coin_Count.text = str(globals.coins)

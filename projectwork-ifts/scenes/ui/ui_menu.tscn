@@ -29,6 +29,12 @@
 [ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="27_a43mx"]
 [ext_resource type="Texture2D" uid="uid://ds3ivhsaprouu" path="res://assets/menu/ui/volume_lever.png" id="27_qkkkl"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
+[ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_2b6i1"]
+[ext_resource type="Texture2D" uid="uid://bp1vs1d8wp3b4" path="res://assets/menu/ui/ui_female.png" id="31_c1wyc"]
+[ext_resource type="Texture2D" uid="uid://bga2rc6rtmt5x" path="res://assets/menu/buttons_static/button_shop_static.png" id="32_tw4xe"]
+[ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_8ej76"]
+[ext_resource type="Texture2D" uid="uid://b6bwxeul0nc1o" path="res://assets/menu/buttons_static/button_home_static.png" id="34_mh5ls"]
+[ext_resource type="Texture2D" uid="uid://7bpmg5nkgq0i" path="res://assets/menu/buttons_pressed/button_home_pressed.png" id="35_r8yr2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -80,6 +86,15 @@ texture = ExtResource("3_5dgx2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tw4xe"]
 texture = ExtResource("2_5e4in")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wq1ma"]
+texture = ExtResource("1_uaiye")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_476dd"]
+texture = ExtResource("2_n1cxb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cootd"]
+texture = ExtResource("1_uaiye")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_678aq"]
 texture = ExtResource("20_p76uh")
@@ -144,6 +159,28 @@ texture = ExtResource("3_5dgx2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dl3mx"]
 texture = ExtResource("2_5e4in")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr51k"]
+texture = ExtResource("32_tw4xe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_318wq"]
+texture = ExtResource("33_8ej76")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8k0ei"]
+texture = ExtResource("32_tw4xe")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfdmo"]
+texture = ExtResource("34_mh5ls")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgg1w"]
+texture = ExtResource("35_r8yr2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_js1m4"]
+texture = ExtResource("34_mh5ls")
+
+[sub_resource type="LabelSettings" id="LabelSettings_2b6i1"]
+font_size = 43
+shadow_size = 0
+
 [node name="UI_General" type="Control" unique_id=545853388]
 layout_mode = 3
 anchors_preset = 8
@@ -183,10 +220,10 @@ texture = ExtResource("1_gs4mq")
 
 [node name="Volume" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=756444751]
 layout_mode = 0
-offset_left = 107.0
-offset_top = 88.0
-offset_right = 239.265
-offset_bottom = 104.01
+offset_left = 108.0
+offset_top = 148.0
+offset_right = 240.265
+offset_bottom = 164.01001
 scale = Vector2(3.972671, 3.972671)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Volume" unique_id=141202251]
@@ -197,7 +234,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="volume_slider" type="HSlider" parent="PopupMenu/BaseMenu/NinePatchRect/Volume/VBoxContainer/HBoxContainer" unique_id=1918445157]
-custom_minimum_size = Vector2(33.2, 10.52)
+custom_minimum_size = Vector2(33.34, 14.255)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
@@ -211,7 +248,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_a43mx"
 max_value = 1.0
 step = 0.001
 script = ExtResource("4_a43mx")
-bus_name = null
+bus_name = "Music"
 
 [node name="Margin_Account" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=982840633]
 layout_mode = 1
@@ -302,17 +339,16 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0flk0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8aj4d")
 
 [node name="Margin_Quit" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=1052073148]
-custom_minimum_size = Vector2(88, 52)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -144.0
-offset_top = 48.0
-offset_right = -56.0
-offset_bottom = 100.0
+offset_left = -136.0
+offset_top = 40.0
+offset_right = -48.0
+offset_bottom = 88.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.74038464, 0.74038464)
@@ -374,12 +410,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Settings" type="TouchScreenButton" parent="Settings_Button/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1170053878]
+[node name="Settings" type="Button" parent="Settings_Button/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1462526004]
 unique_name_in_owner = true
-position = Vector2(-5.6511345, 3.1395233)
-scale = Vector2(2.1191795, 2.1191795)
-texture_normal = ExtResource("1_uaiye")
-texture_pressed = ExtResource("2_n1cxb")
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_wq1ma")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_476dd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cootd")
 
 [node name="Pop_Quit" type="MarginContainer" parent="." unique_id=360043627]
 unique_name_in_owner = true
@@ -534,6 +571,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nwkdi")
 
 [node name="Pop_Account" type="MarginContainer" parent="." unique_id=1523058105]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = -218.0
 offset_top = -116.0
@@ -573,7 +611,88 @@ theme_override_fonts/font = ExtResource("28_8m5dn")
 theme_override_font_sizes/font_size = 10
 text = "0"
 
+[node name="Popup_Shop" type="MarginContainer" parent="." unique_id=1855182190]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -190.0
+offset_right = -314.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup_Shop" unique_id=1018009248]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup_Shop/VBoxContainer" unique_id=1137099825]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup_Shop/VBoxContainer/HBoxContainer" unique_id=651130784]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("29_2b6i1")
+
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=226592893]
 stream = ExtResource("27_a43mx")
 autoplay = true
 bus = &"Music"
+
+[node name="Female_Shop_Home" type="MarginContainer" parent="." unique_id=382022068]
+layout_mode = 0
+offset_left = -534.0
+offset_top = -279.0
+offset_right = -214.0
+offset_bottom = -151.0
+
+[node name="V_Shop_Home" type="VBoxContainer" parent="Female_Shop_Home" unique_id=1927005193]
+layout_mode = 2
+
+[node name="H_Shop_Home" type="HBoxContainer" parent="Female_Shop_Home/V_Shop_Home" unique_id=2120514375]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home" unique_id=138908514]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("31_c1wyc")
+
+[node name="Button_Shop" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=1243040475]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 16.0
+offset_top = 85.0
+offset_right = 96.0
+offset_bottom = 125.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xr51k")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_318wq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8k0ei")
+
+[node name="Button_Home" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=331472215]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 96.0
+offset_top = 85.0
+offset_right = 176.0
+offset_bottom = 125.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_jfdmo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dgg1w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_js1m4")
+
+[node name="Coin_Count" type="Label" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=697831109]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 129.0
+offset_top = 42.0
+offset_right = 210.185
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("28_8m5dn")
+theme_override_font_sizes/font_size = 25
+text = "0"
+label_settings = SubResource("LabelSettings_2b6i1")
+autowrap_mode = 1

@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c8xnnxqhd0o5q" path="res://scenes/room/mess/floor_mess_1.tscn" id="7_y58yt"]
 [ext_resource type="PackedScene" uid="uid://bsctegqwk4fe3" path="res://scenes/characters/female-character.tscn" id="10_cgagh"]
 [ext_resource type="PackedScene" uid="uid://d2urybn2nac45" path="res://scenes/room/mess/floor_mess_2.tscn" id="11_c8nfc"]
-[ext_resource type="PackedScene" uid="uid://4x8usi38ab3i" path="res://scenes/ui/ui_female.tscn" id="11_y58yt"]
 [ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="12_5j5yt"]
 [ext_resource type="PackedScene" uid="uid://ce1r0r5yibses" path="res://scenes/ui/ui_menu.tscn" id="12_kb4no"]
 [ext_resource type="PackedScene" uid="uid://brf8deprlngk7" path="res://scenes/room/mess/floor_mess_3.tscn" id="12_oxcik"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bvk7mwaecbd6b" path="res://scenes/room/mess/floor_mess_7.tscn" id="16_8k4wh"]
 
 [node name="room" type="StaticBody2D" unique_id=1648951168]
+script = ExtResource("1_oxcik")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=183385469]
 position = Vector2(467, -165)
@@ -45,34 +45,30 @@ scale = Vector2(4.7894726, 4.789474)
 
 [node name="VirtualJoystick" parent="CanvasLayer" unique_id=912784726 instance=ExtResource("3_5j5yt")]
 
-[node name="ui_female" parent="CanvasLayer" unique_id=1448791624 instance=ExtResource("11_y58yt")]
-position = Vector2(137, 117)
-scale = Vector2(3, 3)
-
 [node name="mess" type="Node2D" parent="." unique_id=653632723]
-position = Vector2(747, -220)
+position = Vector2(745, -218)
 script = ExtResource("1_oxcik")
 
 [node name="floor_mess1" parent="mess" unique_id=172970162 instance=ExtResource("7_y58yt")]
-position = Vector2(-278, 65)
+position = Vector2(-265, 77)
 
 [node name="floor_mess2" parent="mess" unique_id=930935058 instance=ExtResource("11_c8nfc")]
-position = Vector2(-276, 102)
+position = Vector2(-287, 91)
 
 [node name="floor_mess3" parent="mess" unique_id=275730734 instance=ExtResource("12_oxcik")]
-position = Vector2(-294, 83)
+position = Vector2(-275, 106)
 
 [node name="floor_mess4" parent="mess" unique_id=1938653979 instance=ExtResource("13_obhq2")]
-position = Vector2(-242, 83)
+position = Vector2(-334, 84)
 
 [node name="floor_mess5" parent="mess" unique_id=918951215 instance=ExtResource("14_oxav3")]
-position = Vector2(-337, 86)
+position = Vector2(-289, 57)
 
 [node name="floor_mess6" parent="mess" unique_id=12231581 instance=ExtResource("15_6lv7u")]
-position = Vector2(-314, 95)
+position = Vector2(-224, 81)
 
 [node name="floor_mess7" parent="mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
-position = Vector2(-220, 84)
+position = Vector2(-243, 71)
 
 [node name="Female" parent="." unique_id=1587920895 instance=ExtResource("10_cgagh")]
 position = Vector2(434, -154)
