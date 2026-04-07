@@ -28,7 +28,6 @@
 [ext_resource type="PackedScene" uid="uid://bodfe46okya7x" path="res://scenes/room/plants/cactus_1.tscn" id="24_swbjq"]
 
 [node name="room" type="StaticBody2D" unique_id=1648951168]
-script = ExtResource("1_oxcik")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=183385469]
 position = Vector2(467, -165)
@@ -38,7 +37,7 @@ zoom = Vector2(3.6, 3.6)
 position = Vector2(467, -165)
 texture = ExtResource("1_gsayk")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1376329003]
+[node name="room_border" type="CollisionPolygon2D" parent="." unique_id=1376329003]
 position = Vector2(467, -165)
 build_mode = 1
 polygon = PackedVector2Array(0, -21, -87, 21, -87, 28, 0, 71, 86, 30, 86, 21)
@@ -95,30 +94,38 @@ position = Vector2(401, -168)
 [node name="cactus2" parent="assets" unique_id=1316577571 instance=ExtResource("21_uuwcm")]
 position = Vector2(394, -164)
 
-[node name="mess" type="Node2D" parent="." unique_id=653632723]
-position = Vector2(745, -218)
+[node name="mess" type="Node2D" parent="." unique_id=630301284]
 script = ExtResource("1_oxcik")
 
-[node name="floor_mess1" parent="mess" unique_id=172970162 instance=ExtResource("7_y58yt")]
+[node name="Timer" type="Timer" parent="mess" unique_id=232330995]
+wait_time = 20.0
+autostart = true
+
+[node name="mess" type="Node2D" parent="mess" unique_id=653632723]
+position = Vector2(745, -218)
+
+[node name="floor_mess1" parent="mess/mess" unique_id=172970162 instance=ExtResource("7_y58yt")]
 position = Vector2(-269, 78)
 
-[node name="floor_mess2" parent="mess" unique_id=930935058 instance=ExtResource("11_c8nfc")]
+[node name="floor_mess2" parent="mess/mess" unique_id=930935058 instance=ExtResource("11_c8nfc")]
 position = Vector2(-293, 93)
 
-[node name="floor_mess3" parent="mess" unique_id=275730734 instance=ExtResource("12_oxcik")]
+[node name="floor_mess3" parent="mess/mess" unique_id=275730734 instance=ExtResource("12_oxcik")]
 position = Vector2(-275, 106)
 
-[node name="floor_mess4" parent="mess" unique_id=1938653979 instance=ExtResource("13_obhq2")]
+[node name="floor_mess4" parent="mess/mess" unique_id=1938653979 instance=ExtResource("13_obhq2")]
 position = Vector2(-334, 84)
 
-[node name="floor_mess5" parent="mess" unique_id=918951215 instance=ExtResource("14_oxav3")]
+[node name="floor_mess5" parent="mess/mess" unique_id=918951215 instance=ExtResource("14_oxav3")]
 position = Vector2(-293, 65)
 
-[node name="floor_mess6" parent="mess" unique_id=12231581 instance=ExtResource("15_6lv7u")]
+[node name="floor_mess6" parent="mess/mess" unique_id=12231581 instance=ExtResource("15_6lv7u")]
 position = Vector2(-235, 80)
 
-[node name="floor_mess7" parent="mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
+[node name="floor_mess7" parent="mess/mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
 position = Vector2(-246, 62)
 
 [node name="Female" parent="." unique_id=1587920895 instance=ExtResource("10_cgagh")]
 position = Vector2(434, -154)
+
+[connection signal="timeout" from="mess/Timer" to="mess" method="_on_timer_timeout"]

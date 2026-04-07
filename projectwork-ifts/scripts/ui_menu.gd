@@ -169,3 +169,7 @@ func _on_home_button_pressed():
 func _process(_delta: float) -> void:
 	%Coin_Count.text = str(globals.coins)
 	%Account_Coin_Count.text = str(globals.coins)
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

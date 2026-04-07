@@ -96,8 +96,8 @@ zoom = Vector2(3.6, 3.6)
 
 [node name="bar" type="Sprite2D" parent="." unique_id=298056870]
 y_sort_enabled = true
-position = Vector2(0, 45.000004)
-scale = Vector2(1.55352, 1.5625001)
+position = Vector2(0.64825606, 45.080387)
+scale = Vector2(1.5712805, 1.580363)
 texture = ExtResource("3_djmwj")
 
 [node name="title" type="AnimatedSprite2D" parent="." unique_id=1965547486]

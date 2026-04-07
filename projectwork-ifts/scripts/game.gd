@@ -1,31 +1,30 @@
 extends Node
 
+var mess_nodes: Array = []
+
+func _ready() -> void:
+	# Grab all floor_mess nodes from the inner mess node
+	for child in $mess.get_children():
+		if child is Area2D:
+			mess_nodes.append(child)
+	print("mess_nodes found: ", mess_nodes.size())
+
+	# Start the timer from code so we don't rely on editor signal wiring
+	$Timer.start()
+
 func _on_timer_timeout() -> void:
-	var oggetti = [
-		$floor_mess1,
-		$floor_mess2,
-		$floor_mess3,
-		$floor_mess4,
-		$floor_mess5,
-		$floor_mess6,
-		$floor_mess7
-	]
+	print("timer fired, mess_nodes: ", mess_nodes.size())
 
-	# build a list of only objects that are not already visible
-	var available = []
-	for i in range(oggetti.size()):
-		if not globals.array_check[i]:
-			available.append(i)
+	var available: Array = []
+	for m in mess_nodes:
+		if not m._is_active:
+			available.append(m)
 
-	# if all objects are already spawned, do nothing
+	print("available: ", available.size())
+
 	if available.is_empty():
 		return
 
-	# pick randomly from available ones only
-	var random = available[randi_range(0, available.size() - 1)]
-	var obj = oggetti[random]
-	obj.position.x = globals.array_x[random]
-	obj.position.y = globals.array_y[random]
-	obj.visible = true
-	obj.get_node("CollisionPolygon2D").set_deferred("disabled", false)
-	globals.array_check[random] = true
+	var pick: Area2D = available[randi() % available.size()]
+	pick.show_mess()
+	print("spawned: ", pick.name)
