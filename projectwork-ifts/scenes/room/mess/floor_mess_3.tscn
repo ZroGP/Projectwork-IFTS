@@ -7,8 +7,8 @@
 collision_layer = 2
 script = ExtResource("1_jiynv")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=99116997]
-polygon = PackedVector2Array(2, 6, -7, 2, -7, -3, -3, -6, 3, -6, 7, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=139803288]
 texture = ExtResource("1_wxnuv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=346356912]
+polygon = PackedVector2Array(5, 8, -3, 4, -1, -4, 5, -6, 11, 0, 11, 6)

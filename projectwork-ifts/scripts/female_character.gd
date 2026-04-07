@@ -41,7 +41,7 @@ func interact() -> void:
 
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
-	globals.coins += 1
+	globals.coins += 25
 	print(globals.coins)
 
 	await $AnimatedSprite2D.animation_finished

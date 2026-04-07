@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://l7vsuoxk63bj" path="res://assets/charachters/female/female_red_shirt/female_interact.png" id="2_40ykn"]
 [ext_resource type="Texture2D" uid="uid://b3t2kduc6gehv" path="res://assets/charachters/female/female_red_shirt/female_rotate.png" id="3_8yly0"]
 [ext_resource type="Texture2D" uid="uid://chkit1s0fmubi" path="res://assets/charachters/female/female_red_shirt/female_walk.png" id="4_c052x"]
-[ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="6_jvi8x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnd63"]
 atlas = ExtResource("1_gvmuv")
@@ -585,11 +584,8 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_3mf85")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1811033210 groups=["player"]]
-visible = false
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=214349984 groups=["player"]]
 shape = SubResource("CircleShape2D_3mf85")
-
-[node name="floor_mess4" parent="InteractionArea" unique_id=172970162 instance=ExtResource("6_jvi8x")]

@@ -12,8 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://brf8deprlngk7" path="res://scenes/room/mess/floor_mess_3.tscn" id="12_oxcik"]
 [ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="13_obhq2"]
 [ext_resource type="PackedScene" uid="uid://brtre8p1reac7" path="res://scenes/room/mess/floor_mess_5.tscn" id="14_oxav3"]
+[ext_resource type="PackedScene" uid="uid://cdvaygbvu8ubt" path="res://scenes/room/windows/window3.tscn" id="15_0u50o"]
 [ext_resource type="PackedScene" uid="uid://dvgw4hp4u3bvs" path="res://scenes/room/mess/floor_mess_6.tscn" id="15_6lv7u"]
+[ext_resource type="PackedScene" uid="uid://0obb5ka7llbe" path="res://scenes/room/bed/bed_black_1.tscn" id="15_c8nfc"]
 [ext_resource type="PackedScene" uid="uid://bvk7mwaecbd6b" path="res://scenes/room/mess/floor_mess_7.tscn" id="16_8k4wh"]
+[ext_resource type="PackedScene" uid="uid://g84jcbwtpk3" path="res://scenes/room/chair/chair_black_1.tscn" id="16_oxcik"]
+[ext_resource type="PackedScene" uid="uid://81djoh30as2n" path="res://scenes/room/door.tscn" id="16_swbjq"]
+[ext_resource type="PackedScene" uid="uid://d1by3p0l0ivbs" path="res://scenes/room/lamp/lamp_green_1.tscn" id="17_8k4wh"]
+[ext_resource type="PackedScene" uid="uid://ogjequnjmegw" path="res://scenes/room/paintings/paint_1.tscn" id="18_mg4hm"]
+[ext_resource type="PackedScene" uid="uid://c7mw00y2ivo1k" path="res://scenes/room/console/console_grey_1.tscn" id="19_4b4yl"]
+[ext_resource type="PackedScene" uid="uid://brba1oiklyt3" path="res://scenes/room/desk/desk_1.tscn" id="20_fyutr"]
+[ext_resource type="PackedScene" uid="uid://dhxpclb6q64gk" path="res://scenes/room/pc/pc_grey_1.tscn" id="21_d8gmq"]
+[ext_resource type="PackedScene" uid="uid://cor07piqe8jpk" path="res://scenes/room/shelfs/shelf_1.tscn" id="22_d8gmq"]
+[ext_resource type="PackedScene" uid="uid://d0oprpyltp233" path="res://scenes/room/plants/exotic_1.tscn" id="23_0u50o"]
+[ext_resource type="PackedScene" uid="uid://bodfe46okya7x" path="res://scenes/room/plants/cactus_1.tscn" id="24_swbjq"]
+[ext_resource type="PackedScene" uid="uid://dw6xv52va7crr" path="res://scenes/room/carpet/carpet_green_2.tscn" id="27_swbjq"]
 
 [node name="room" type="StaticBody2D" unique_id=1648951168]
 script = ExtResource("1_oxcik")
@@ -45,6 +58,48 @@ scale = Vector2(4.7894726, 4.789474)
 
 [node name="VirtualJoystick" parent="CanvasLayer" unique_id=912784726 instance=ExtResource("3_5j5yt")]
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1605426237]
+
+[node name="window3" parent="Node2D" unique_id=1522180996 instance=ExtResource("15_0u50o")]
+position = Vector2(504, -187)
+
+[node name="door" parent="Node2D" unique_id=1454358519 instance=ExtResource("16_swbjq")]
+position = Vector2(422, -168)
+
+[node name="lamp_green1" parent="Node2D" unique_id=83055844 instance=ExtResource("17_8k4wh")]
+position = Vector2(528, -157)
+
+[node name="bed_black1" parent="Node2D" unique_id=271292597 instance=ExtResource("15_c8nfc")]
+position = Vector2(524.99994, -139)
+scale = Vector2(0.7, 0.7)
+
+[node name="console_grey1" parent="Node2D" unique_id=40139884 instance=ExtResource("19_4b4yl")]
+position = Vector2(471.99997, -162)
+
+[node name="desk1" parent="Node2D" unique_id=503206150 instance=ExtResource("20_fyutr")]
+position = Vector2(472, -172)
+
+[node name="chair_black1" parent="Node2D" unique_id=1999875556 instance=ExtResource("16_oxcik")]
+position = Vector2(458, -167.99998)
+
+[node name="paint1" parent="Node2D" unique_id=477026738 instance=ExtResource("18_mg4hm")]
+position = Vector2(541, -164)
+
+[node name="pc_grey1" parent="Node2D" unique_id=1505221111 instance=ExtResource("21_d8gmq")]
+position = Vector2(472, -181.99998)
+
+[node name="shelf1" parent="Node2D" unique_id=658377944 instance=ExtResource("22_d8gmq")]
+position = Vector2(397, -162)
+
+[node name="exotic1" parent="Node2D" unique_id=1038235955 instance=ExtResource("23_0u50o")]
+position = Vector2(397, -167)
+
+[node name="cactus1" parent="Node2D" unique_id=1316577571 instance=ExtResource("24_swbjq")]
+position = Vector2(482, -178)
+
+[node name="carpet_green2" parent="Node2D" unique_id=948189544 instance=ExtResource("27_swbjq")]
+position = Vector2(465, -134)
+
 [node name="mess" type="Node2D" parent="." unique_id=653632723]
 position = Vector2(745, -218)
 script = ExtResource("1_oxcik")
@@ -62,7 +117,7 @@ position = Vector2(-275, 106)
 position = Vector2(-334, 84)
 
 [node name="floor_mess5" parent="mess" unique_id=918951215 instance=ExtResource("14_oxav3")]
-position = Vector2(-289, 57)
+position = Vector2(-288, 62)
 
 [node name="floor_mess6" parent="mess" unique_id=12231581 instance=ExtResource("15_6lv7u")]
 position = Vector2(-224, 81)
