@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_8ej76"]
 [ext_resource type="Texture2D" uid="uid://b6bwxeul0nc1o" path="res://assets/menu/buttons_static/button_home_static.png" id="34_mh5ls"]
 [ext_resource type="Texture2D" uid="uid://7bpmg5nkgq0i" path="res://assets/menu/buttons_pressed/button_home_pressed.png" id="35_r8yr2"]
+[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://scenes/ui/joystick/virtual_joystick.tscn" id="36_c1wyc"]
+[ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="37_tw4xe"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -612,6 +614,7 @@ text = "0"
 
 [node name="Popup_Shop" type="MarginContainer" parent="." unique_id=1855182190]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -634,6 +637,35 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Popup_Shop/VBoxContainer/HBoxContainer" unique_id=651130784]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("29_2b6i1")
+
+[node name="Popup_Home" type="MarginContainer" parent="." unique_id=1885717929]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -199.0
+offset_right = -416.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup_Home" unique_id=1294638798]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup_Home/VBoxContainer" unique_id=1392751442]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup_Home/VBoxContainer/HBoxContainer" unique_id=759814978]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("29_2b6i1")
@@ -698,3 +730,19 @@ theme_override_font_sizes/font_size = 25
 text = "0"
 label_settings = SubResource("LabelSettings_2b6i1")
 autowrap_mode = 1
+
+[node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_c1wyc")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -427.0
+offset_top = 220.0
+offset_right = -427.0
+offset_bottom = 220.0
+
+[node name="interact" parent="." unique_id=429105882 instance=ExtResource("37_tw4xe")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 415.0
+offset_top = 169.0
+offset_right = 434.0
+offset_bottom = 191.0

@@ -3,11 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cmc57uawy772k" path="res://assets/menu/loading/background.png" id="1_gsayk"]
 [ext_resource type="Script" uid="uid://dq2a6cy6rbvwg" path="res://scripts/game.gd" id="1_oxcik"]
 [ext_resource type="Texture2D" uid="uid://cv5hfbq1fmecf" path="res://assets/room/room.png" id="2_gf1f2"]
-[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://scenes/ui/joystick/virtual_joystick.tscn" id="3_5j5yt"]
 [ext_resource type="PackedScene" uid="uid://c8xnnxqhd0o5q" path="res://scenes/room/mess/floor_mess_1.tscn" id="7_y58yt"]
 [ext_resource type="PackedScene" uid="uid://bsctegqwk4fe3" path="res://scenes/characters/female-character.tscn" id="10_cgagh"]
 [ext_resource type="PackedScene" uid="uid://d2urybn2nac45" path="res://scenes/room/mess/floor_mess_2.tscn" id="11_c8nfc"]
-[ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="12_5j5yt"]
 [ext_resource type="PackedScene" uid="uid://ce1r0r5yibses" path="res://scenes/ui/ui_menu.tscn" id="12_kb4no"]
 [ext_resource type="PackedScene" uid="uid://brf8deprlngk7" path="res://scenes/room/mess/floor_mess_3.tscn" id="12_oxcik"]
 [ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="13_obhq2"]
@@ -51,12 +49,6 @@ texture = ExtResource("2_gf1f2")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513509026]
 
 [node name="UI_General" parent="CanvasLayer" unique_id=545853388 instance=ExtResource("12_kb4no")]
-
-[node name="interact" parent="CanvasLayer" unique_id=1895821791 instance=ExtResource("12_5j5yt")]
-position = Vector2(995, 455)
-scale = Vector2(4.7894726, 4.789474)
-
-[node name="VirtualJoystick" parent="CanvasLayer" unique_id=912784726 instance=ExtResource("3_5j5yt")]
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1605426237]
 

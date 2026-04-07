@@ -19,16 +19,20 @@ extends Control
 @onready var no_quit = %No 
 @onready var yes_quit = %Yes
 
-# Languages
+# Account
 @onready var account_button = %Button_Account  
 @onready var account_popup = %Pop_Account
 @onready var exit_account = %Exit_Account
 
 # Home/Shop
 @onready var shop_button = %Button_Shop
-
 @onready var popup_shop = %Popup_Shop
 
+@onready var home_button = %Button_Home
+@onready var popup_home = %Popup_Home
+
+@onready var joystick = %VirtualJoystick
+@onready var interact = %interact
 
 func _ready():
 	#Settings
@@ -60,20 +64,30 @@ func _ready():
 	
 	# SHop/Home
 	shop_button.pressed.connect(_on_shop_button_pressed)
-	
 	popup_shop.hide()
+	
+	home_button.pressed.connect(_on_home_button_pressed)
+	popup_home.hide()
+	
+	
 	
 func _on_settings_button_pressed():
 	popup_shop.hide()
+	popup_home.hide()
+	joystick.hide()
+	interact.hide()
 	menu_container.show()
+	
 	
 func _on_exit_button_pressed():
 	menu_container.hide()
+	joystick.show()
+	interact.show()
 	
 func _on_credits_button_pressed():
 	menu_container.hide()
 	credits_popup.show()
-
+	
 func _on_exit_credits_pressed():
 	credits_popup.hide()
 	menu_container.show()
@@ -106,16 +120,42 @@ func _on_exit_account_pressed():
 	menu_container.show()
 	
 	
+	
 func _on_shop_button_pressed():
 	if popup_shop.visible:
 		popup_shop.hide()
+		joystick.show()
+		interact.show()
+
 	else:
 		popup_shop.show()
+		credits_popup.hide()
+		languages_popup.hide()
+		quit_popup.hide()
+		account_popup.hide()
 		menu_container.hide()
+		popup_home.hide()
+		joystick.hide()
+		interact.hide()
 		
 		
-		
-		
+func _on_home_button_pressed():
+	if popup_home.visible:
+		popup_home.hide()
+		joystick.show()
+		interact.show()
+	else:
+		credits_popup.hide()
+		languages_popup.hide()
+		quit_popup.hide()
+		account_popup.hide()
+		joystick.hide()
+		interact.hide()
+		popup_home.show()
+		menu_container.hide()
+		popup_shop.hide()
+	
+	
 	
 	
 	

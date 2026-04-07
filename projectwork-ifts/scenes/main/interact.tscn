@@ -4,7 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://q70qnluckq7u" path="res://assets/menu/buttons_pressed/button_interact_pressed.png" id="2_y6uxj"]
 [ext_resource type="Script" uid="uid://bmobq7g0alxl7" path="res://scripts/interact.gd" id="3_y6uxj"]
 
-[node name="interact" type="TouchScreenButton" unique_id=1895821791]
-texture_normal = ExtResource("1_0xled")
-texture_pressed = ExtResource("2_y6uxj")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6uxj"]
+texture = ExtResource("1_0xled")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4sdex"]
+texture = ExtResource("2_y6uxj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1a0u"]
+texture = ExtResource("1_0xled")
+
+[node name="interact" type="Button" unique_id=429105882]
+offset_right = 19.0
+offset_bottom = 22.0
+scale = Vector2(4.9, 4.9)
+size_flags_stretch_ratio = 0.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_y6uxj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4sdex")
+theme_override_styles/hover = SubResource("StyleBoxTexture_b1a0u")
 script = ExtResource("3_y6uxj")
