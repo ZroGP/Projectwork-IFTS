@@ -1,5 +1,6 @@
 extends Area2D
 
+#Timer
 @export var respawn_time: float = 10.0
 
 var _home: Vector2
@@ -17,6 +18,7 @@ func on_interact(_player) -> void:
 	_hide_mess()
 	get_tree().create_timer(respawn_time).timeout.connect(_respawn)
 
+#Show the "mess" and at console print the message
 func show_mess() -> void:
 	position = _home
 	visible = true

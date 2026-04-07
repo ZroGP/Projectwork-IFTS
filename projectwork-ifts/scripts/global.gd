@@ -1,3 +1,4 @@
 extends Node
 
-var coins: int = 100
+#Starting coins
+var coins: int = 270

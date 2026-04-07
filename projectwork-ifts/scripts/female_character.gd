@@ -4,6 +4,7 @@ var direction: Vector2
 var nearby_interactables: Array[Node2D] = []
 var is_interacting: bool = false
 
+#If player is near "mess" it can interact and start animation
 func _ready() -> void:
 	$InteractionArea.area_entered.connect(_on_interactable_entered)
 	$InteractionArea.area_exited.connect(_on_interactable_exited)
@@ -39,9 +40,10 @@ func interact() -> void:
 		6:  interact_anim = &"interact_up"
 		7:  interact_anim = &"interact_vertical_up"
 
+#If the player interact with the "mess" add the coins on the global variable "coins"
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
-	globals.coins += 25
+	globals.coins += 10
 	print(globals.coins)
 
 	await $AnimatedSprite2D.animation_finished

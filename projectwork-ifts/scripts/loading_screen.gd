@@ -1,5 +1,6 @@
 extends Control
 
+#Addint loading time because the game is so light it almost skip the scene
 const GAME_SCENE = "res://scenes/main/game.tscn"
 const MIN_LOAD_TIME = 2.0  # seconds
 
@@ -21,7 +22,7 @@ func _process(delta):
 		$ProgressBar.value = 100
 		load_complete = true
 
-	# Only switch scenes when BOTH conditions are met
+	# Switch scenes when BOTH conditions are met
 	if load_complete and elapsed >= MIN_LOAD_TIME:
 		var game_scene = ResourceLoader.load_threaded_get(GAME_SCENE)
 		get_tree().change_scene_to_packed(game_scene)
