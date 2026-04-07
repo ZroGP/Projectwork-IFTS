@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bo67dpckf1jf3" path="res://assets/room/bed/sprite_bed_black1.png" id="1_jbhv0"]
 
 [node name="bed_black1" type="StaticBody2D" unique_id=271292597]
-scale = Vector2(0.8, 0.8)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1059013314]
-polygon = PackedVector2Array(8, -8, 8, -15, 27, -6, 27, 8, 2, 20, -18, 11, -18, 7, -16, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221501654]
 texture = ExtResource("1_jbhv0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1059013314]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(6.2500005, -8.750001, 8, -15, 25.000002, -5.0000005, 25.000002, 5.0000005, 5.0000005, 15.000002, -17.500002, 3.7500005)

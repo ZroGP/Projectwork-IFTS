@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://cjuyiye2m51" path="res://assets/room/pc/pc_white2.png" id="1_a8k5p"]
 
 [node name="pc_white2" type="StaticBody2D" unique_id=1505221111]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1221736551]
-scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_a8k5p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1330173425]
-polygon = PackedVector2Array(-11.428571, 8.571428, -2.8571427, 12.857142, 12.857142, 4.285714, 5.7142854, 0)
+position = Vector2(-1.2499999, 4.9999995)
+polygon = PackedVector2Array(-11.428571, 8.571428, -2.8571427, 12.857142, 12.499999, 5, 17.499998, -1.2499995, 17.499998, -14.999998, 7.499999, -17.499998, 5.7142854, 0)

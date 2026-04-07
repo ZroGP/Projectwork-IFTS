@@ -6,8 +6,9 @@
 scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520813003]
-scale = Vector2(0.8, 0.8)
+position = Vector2(0, -5)
 texture = ExtResource("1_tdorf")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1693982022]
-polygon = PackedVector2Array(-4.9999995, 17.499998, 0, 13.749999, 4.9999995, 16.249998, 0, 19.999998)
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-4.9999995, 17.499998, 0, 14.749999, 4.9999995, 17.249998, 0, 19.999998)

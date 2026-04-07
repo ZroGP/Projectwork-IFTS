@@ -5,8 +5,9 @@
 [node name="console_grey1" type="StaticBody2D" unique_id=83055844]
 scale = Vector2(0.7, 0.7)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1259631089]
-polygon = PackedVector2Array(6, -11, -14, 2, -7, 11, 13, -3, 13, -7)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520813003]
 texture = ExtResource("1_dvpih")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=819865126]
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(5.7142863, -8.571429, -1.4285716, -5.7142863, 5.7142863, -2.8571432, 11.428573, -5.7142863)

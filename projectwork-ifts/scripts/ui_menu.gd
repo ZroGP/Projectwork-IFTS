@@ -168,3 +168,4 @@ func _on_home_button_pressed():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	%Coin_Count.text = str(globals.coins)
+	%Account_Coin_Count.text = str(globals.coins)
