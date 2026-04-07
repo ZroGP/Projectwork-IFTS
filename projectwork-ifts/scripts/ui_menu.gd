@@ -76,6 +76,10 @@ func _on_settings_button_pressed():
 	popup_home.hide()
 	joystick.hide()
 	interact.hide()
+	credits_popup.hide()
+	languages_popup.hide()
+	quit_popup.hide()
+	account_popup.hide()
 	menu_container.show()
 	
 	

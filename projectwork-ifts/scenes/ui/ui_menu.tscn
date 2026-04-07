@@ -25,9 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://bdpqqiuanikt6" path="res://assets/menu/buttons_pressed/button_no_pressed.png" id="21_qkkkl"]
 [ext_resource type="Texture2D" uid="uid://dl3mcykjlpvy8" path="res://assets/menu/buttons_static/button_yes_static.png" id="22_a43mx"]
 [ext_resource type="Texture2D" uid="uid://bt06xcuskrggr" path="res://assets/menu/buttons_pressed/button_yes_pressed.png" id="23_8m5dn"]
-[ext_resource type="Texture2D" uid="uid://d2e0ui66a8n3n" path="res://assets/menu/ui/sprite_account_male.png" id="26_p76uh"]
 [ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="27_a43mx"]
 [ext_resource type="Texture2D" uid="uid://ds3ivhsaprouu" path="res://assets/menu/ui/volume_lever.png" id="27_qkkkl"]
+[ext_resource type="Texture2D" uid="uid://bi1v4x6sy2s02" path="res://assets/menu/ui/sprite_account_female.png" id="27_tw4xe"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
 [ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_2b6i1"]
 [ext_resource type="Texture2D" uid="uid://bp1vs1d8wp3b4" path="res://assets/menu/ui/ui_female.png" id="31_c1wyc"]
@@ -35,8 +35,10 @@
 [ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_8ej76"]
 [ext_resource type="Texture2D" uid="uid://b6bwxeul0nc1o" path="res://assets/menu/buttons_static/button_home_static.png" id="34_mh5ls"]
 [ext_resource type="Texture2D" uid="uid://7bpmg5nkgq0i" path="res://assets/menu/buttons_pressed/button_home_pressed.png" id="35_r8yr2"]
+[ext_resource type="Texture2D" uid="uid://c8ymivtrokwsl" path="res://assets/menu/ui/ui_stress_bar.png" id="36_8ej76"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://scenes/ui/joystick/virtual_joystick.tscn" id="36_c1wyc"]
 [ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="37_tw4xe"]
+[ext_resource type="Script" uid="uid://ckn3k3s42h3tc" path="res://scripts/texture_progress_bar.gd" id="39_mh5ls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -589,7 +591,7 @@ size_flags_vertical = 3
 [node name="NinePatchRect" type="NinePatchRect" parent="Pop_Account/VAccount/HAccount" unique_id=508554271]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("26_p76uh")
+texture = ExtResource("27_tw4xe")
 
 [node name="Exit_Account" type="Button" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=171123010]
 unique_name_in_owner = true
@@ -731,6 +733,38 @@ text = "0"
 label_settings = SubResource("LabelSettings_2b6i1")
 autowrap_mode = 1
 
+[node name="Bar" type="MarginContainer" parent="." unique_id=1627830888]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.00006
+offset_top = -297.0
+offset_right = -453.00006
+offset_bottom = -289.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4.100167, 6.639064)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Bar" unique_id=1037857081]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Bar/VBoxContainer" unique_id=206391161]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Stress" type="TextureProgressBar" parent="Bar/VBoxContainer/HBoxContainer" unique_id=1860867796]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+nine_patch_stretch = true
+stretch_margin_top = 8
+texture_under = ExtResource("36_8ej76")
+script = ExtResource("39_mh5ls")
+
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_c1wyc")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -746,3 +780,8 @@ offset_left = 415.0
 offset_top = 169.0
 offset_right = 434.0
 offset_bottom = 191.0
+
+[node name="Timer" type="Timer" parent="." unique_id=275650317]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="Bar/VBoxContainer/HBoxContainer/Stress" method="_on_timer_timeout"]

@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cor07piqe8jpk" path="res://scenes/room/shelfs/shelf_1.tscn" id="22_d8gmq"]
 [ext_resource type="PackedScene" uid="uid://d0oprpyltp233" path="res://scenes/room/plants/exotic_1.tscn" id="23_0u50o"]
 [ext_resource type="PackedScene" uid="uid://bodfe46okya7x" path="res://scenes/room/plants/cactus_1.tscn" id="24_swbjq"]
+[ext_resource type="PackedScene" uid="uid://i0qjx0y8ogfp" path="res://scenes/cat_void.tscn" id="26_0u50o"]
 [ext_resource type="PackedScene" uid="uid://dw6xv52va7crr" path="res://scenes/room/carpet/carpet_green_2.tscn" id="27_swbjq"]
 
 [node name="room" type="StaticBody2D" unique_id=1648951168]
@@ -119,3 +120,6 @@ position = Vector2(-243, 71)
 
 [node name="Female" parent="." unique_id=1587920895 instance=ExtResource("10_cgagh")]
 position = Vector2(434, -154)
+
+[node name="CharacterBody2D" parent="." unique_id=656322203 instance=ExtResource("26_0u50o")]
+position = Vector2(533, -141)
