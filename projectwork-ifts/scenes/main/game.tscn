@@ -27,6 +27,8 @@
 [ext_resource type="PackedScene" uid="uid://efqxlet8wwol" path="res://scenes/room/carpet/carpet_blu_1.tscn" id="24_ognr0"]
 [ext_resource type="PackedScene" uid="uid://bodfe46okya7x" path="res://scenes/room/plants/cactus_1.tscn" id="24_swbjq"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0u50o"]
+
 [node name="room" type="StaticBody2D" unique_id=1648951168]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=183385469]
@@ -45,6 +47,14 @@ polygon = PackedVector2Array(0, -21, -87, 21, -87, 28, 0, 71, 86, 30, 86, 21)
 [node name="room" type="Sprite2D" parent="." unique_id=683385401]
 position = Vector2(467, -165)
 texture = ExtResource("2_gf1f2")
+
+[node name="Area2D" type="Area2D" parent="room" unique_id=128351477]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="room/Area2D" unique_id=317818966]
+scale = Vector2(9.321092, 7.326032)
+shape = SubResource("CircleShape2D_0u50o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513509026]
 
@@ -125,7 +135,10 @@ position = Vector2(-235, 80)
 [node name="floor_mess7" parent="mess/mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
 position = Vector2(-246, 62)
 
-[node name="Female" parent="." unique_id=1587920895 instance=ExtResource("10_cgagh")]
+[node name="Female" parent="." unique_id=1587920895 node_paths=PackedStringArray("detection_area") instance=ExtResource("10_cgagh")]
 position = Vector2(434, -154)
+detection_area = NodePath("../room/Area2D")
 
 [connection signal="timeout" from="mess/Timer" to="mess" method="_on_timer_timeout"]
+
+[editable path="CanvasLayer/UI_General"]

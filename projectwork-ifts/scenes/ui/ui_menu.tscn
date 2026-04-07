@@ -38,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://c8ymivtrokwsl" path="res://assets/menu/ui/ui_stress_bar.png" id="36_8ej76"]
 [ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://scenes/ui/joystick/virtual_joystick.tscn" id="36_c1wyc"]
 [ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="37_tw4xe"]
-[ext_resource type="Script" uid="uid://ckn3k3s42h3tc" path="res://scripts/texture_progress_bar.gd" id="39_mh5ls"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -736,38 +735,6 @@ text = "0"
 label_settings = SubResource("LabelSettings_2b6i1")
 autowrap_mode = 1
 
-[node name="Bar" type="MarginContainer" parent="." unique_id=1627830888]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -537.00006
-offset_top = -297.0
-offset_right = -453.00006
-offset_bottom = -289.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4.100167, 6.639064)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Bar" unique_id=1037857081]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Bar/VBoxContainer" unique_id=206391161]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Stress" type="TextureProgressBar" parent="Bar/VBoxContainer/HBoxContainer" unique_id=1860867796]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-nine_patch_stretch = true
-stretch_margin_top = 8
-texture_under = ExtResource("36_8ej76")
-script = ExtResource("39_mh5ls")
-
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_c1wyc")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -784,7 +751,16 @@ offset_top = 169.0
 offset_right = 434.0
 offset_bottom = 191.0
 
-[node name="Timer" type="Timer" parent="." unique_id=275650317]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="Bar/VBoxContainer/HBoxContainer/Stress" method="_on_timer_timeout"]
+[node name="Stress" type="TextureProgressBar" parent="." unique_id=1860867796]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -537.00006
+offset_top = -297.0
+offset_right = -484.81305
+offset_bottom = -288.77
+scale = Vector2(6.605, 6.605)
+size_flags_horizontal = 3
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_top = 8
+texture_progress = ExtResource("36_8ej76")
