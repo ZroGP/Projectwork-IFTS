@@ -345,13 +345,12 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -136.0
-offset_top = 40.0
-offset_right = -48.0
-offset_bottom = 88.0
+offset_left = -147.0
+offset_top = 39.0
+offset_right = -59.0
+offset_bottom = 87.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(0.74038464, 0.74038464)
 
 [node name="V_Quit" type="VBoxContainer" parent="PopupMenu/BaseMenu/NinePatchRect/Margin_Quit" unique_id=766041543]
 layout_mode = 2
@@ -620,11 +619,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -518.0
-offset_top = -190.0
-offset_right = -314.0
-offset_bottom = 242.0
+offset_top = -199.0
+offset_right = -416.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Popup_Shop" unique_id=1018009248]
 layout_mode = 2
@@ -647,8 +647,9 @@ bus = &"Music"
 layout_mode = 0
 offset_left = -534.0
 offset_top = -279.0
-offset_right = -214.0
-offset_bottom = -151.0
+offset_right = -374.0
+offset_bottom = -217.0
+scale = Vector2(2, 2)
 
 [node name="V_Shop_Home" type="VBoxContainer" parent="Female_Shop_Home" unique_id=1927005193]
 layout_mode = 2
@@ -665,10 +666,10 @@ texture = ExtResource("31_c1wyc")
 [node name="Button_Shop" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=1243040475]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 16.0
-offset_top = 85.0
-offset_right = 96.0
-offset_bottom = 125.0
+offset_left = 7.5
+offset_top = 42.0
+offset_right = 47.5
+offset_bottom = 58.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_xr51k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_318wq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8k0ei")
@@ -676,10 +677,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_8k0ei")
 [node name="Button_Home" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=331472215]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 96.0
-offset_top = 85.0
-offset_right = 176.0
-offset_bottom = 125.0
+offset_left = 46.0
+offset_top = 41.5
+offset_right = 90.0
+offset_bottom = 57.5
 theme_override_styles/normal = SubResource("StyleBoxTexture_jfdmo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dgg1w")
 theme_override_styles/hover = SubResource("StyleBoxTexture_js1m4")
@@ -687,10 +688,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_js1m4")
 [node name="Coin_Count" type="Label" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=697831109]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 129.0
-offset_top = 42.0
-offset_right = 210.185
-offset_bottom = 88.0
+offset_left = 64.5
+offset_top = 19.5
+offset_right = 145.685
+offset_bottom = 65.5
+scale = Vector2(0.47999972, 0.47999972)
 theme_override_fonts/font = ExtResource("28_8m5dn")
 theme_override_font_sizes/font_size = 25
 text = "0"
