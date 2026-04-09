@@ -1,11 +1,11 @@
 extends Button
+
 func _ready() -> void:
 	pressed.connect(_on_pressed)
-	
-	
 
 func _on_pressed() -> void:
 	var player := _get_player()
+	print("player found: ", player)
 	if player:
 		player.interact()
 

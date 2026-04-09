@@ -571,9 +571,10 @@ height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3mf85"]
 
-[node name="Female" type="CharacterBody2D" unique_id=1587920895 groups=["player"]]
+[node name="Female" type="CharacterBody2D" unique_id=1587920895 node_paths=PackedStringArray("detection_area") groups=["player"]]
 collision_mask = 3
 script = ExtResource("1_8yly0")
+detection_area = NodePath("InteractionArea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=217503388 groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_wxp6x")

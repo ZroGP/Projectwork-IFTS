@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var stress_bar: TextureProgressBar = $"../CanvasLayer/UI_General/Stress"
+@onready var stress_bar: TextureProgressBar = get_tree().get_first_node_in_group("stress_bar") as TextureProgressBar
 @export var detection_area: Area2D 
 
 const SPEED: float = 30.0
@@ -42,7 +42,6 @@ func _handle_stress_logic() -> void:
 		
 		# per non far andare il valore oltre 0-100
 		target_value = clamp(target_value, 0, stress_bar.max_value)
-		
 		
 		var tween = create_tween()
 		tween.tween_property(stress_bar, "value", target_value, 0.4)\

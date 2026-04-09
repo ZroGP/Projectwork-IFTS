@@ -571,8 +571,9 @@ height = 10.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xudbq"]
 
-[node name="Male" type="CharacterBody2D" unique_id=1587920895 groups=["player"]]
+[node name="Male" type="CharacterBody2D" unique_id=1587920895 node_paths=PackedStringArray("detection_area") groups=["player"]]
 script = ExtResource("1_opfsr")
+detection_area = NodePath("InteractionArea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=960677456 groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_y8rnv")
@@ -583,7 +584,6 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_p66pi")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1583888143 groups=["player"]]
-visible = false
 collision_layer = 0
 collision_mask = 2
 

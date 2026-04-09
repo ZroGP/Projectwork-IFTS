@@ -88,7 +88,7 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2_cwjmd")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1099129587]
+[node name="background" type="Sprite2D" parent="." unique_id=1099129587]
 texture = ExtResource("1_ku3bi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1705331050]

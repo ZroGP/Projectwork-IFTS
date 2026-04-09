@@ -3,7 +3,16 @@ extends Node
 var mess_nodes: Array = []
 
 func _ready() -> void:
-	#Take all "floor_mess" inside the mess node
+	# Spawn the chosen character once
+	if globals.player_character != "":
+		var character = load(globals.player_character).instantiate()
+		add_child(character)
+		character.add_to_group("player")
+		print("character spawned and added to group: ", character.name)
+	else:
+		print("WARNING: player_character is empty, no character spawned")
+
+	# Take all "floor_mess" inside the mess node (unchanged)
 	for child in $mess.get_children():
 		if child is Area2D:
 			mess_nodes.append(child)
@@ -27,3 +36,10 @@ func _on_timer_timeout() -> void:
 	var pick: Area2D = available[randi() % available.size()]
 	pick.show_mess()
 	print("spawned: ", pick.name)
+
+# Press F5 during play to wipe the save file
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_F5:
+			DirAccess.remove_absolute(globals.SAVE_PATH)
+			print("Save deleted!")

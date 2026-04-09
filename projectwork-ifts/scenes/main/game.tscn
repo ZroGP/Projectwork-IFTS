@@ -58,7 +58,7 @@ shape = SubResource("CircleShape2D_0u50o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513509026]
 
-[node name="UI_General" parent="CanvasLayer" unique_id=545853388 instance=ExtResource("12_kb4no")]
+[node name="UI_General" parent="CanvasLayer" unique_id=545853388 groups=["stress_bar"] instance=ExtResource("12_kb4no")]
 
 [node name="assets" type="Node2D" parent="." unique_id=2029774585]
 
