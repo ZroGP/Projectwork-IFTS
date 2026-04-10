@@ -3,10 +3,10 @@ extends Control
 
 var selected_character := ""
 
-@onready var female_btn = $VBoxContainer/female
-@onready var male_btn   = $VBoxContainer/male
-@onready var name_input = $VBoxContainer/player_name
-@onready var start_btn  = $VBoxContainer/start
+@onready var female_btn = $MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect/female
+@onready var male_btn   = $MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect/male
+@onready var name_input = $MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect/player_name
+@onready var start_btn  = $MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect/start
 
 func _ready():
 	start_btn.disabled = true

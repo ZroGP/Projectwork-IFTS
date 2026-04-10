@@ -4,6 +4,14 @@ extends MarginContainer
 # MALE ASSETS — add male-specific items here
 # -------------------------------------------------------
 const ASSETS_MALE = [
+	# --- Pets ---
+	{
+		"id": "cat_void", "name": "Void", "cost": 100, "category": "Pets",
+		"icon": "res://assets/pets/cat_void.png",
+		"scene": "res://scenes/room/pets/cat_void.tscn",
+		"position": Vector2(520, -145)
+	},
+	
 	# --- Beds ---
 	{
 		"id": "bed_black_1", "name": "Bed Black", "cost": 100, "category": "Beds",
@@ -159,6 +167,7 @@ const ASSETS_MALE = [
 		"scene": "res://scenes/room/windows/window1.tscn",
 		"position": Vector2(520, -145)
 	},
+	
 	# Add more male assets here...
 ]
 
@@ -167,6 +176,14 @@ const ASSETS_MALE = [
 # Swap scenes/icons to female-specific ones when you have them
 # -------------------------------------------------------
 const ASSETS_FEMALE = [
+	# --- Pets ---
+	{
+		"id": "f_cat_void", "name": "Void", "cost": 100, "category": "Pets",
+		"icon": "res://assets/pets/cat_void.png",
+		"scene": "res://scenes/room/pets/cat_void.tscn",
+		"position": Vector2(520, -145)
+	},
+	
 	# --- Beds ---
 	{
 		"id": "f_bed_black_2", "name": "Bed Black", "cost": 100, "category": "Beds",
@@ -322,6 +339,7 @@ const ASSETS_FEMALE = [
 		"scene": "res://scenes/room/windows/window2.tscn",
 		"position": Vector2(520, -145)
 	},
+	
 	# Add more female assets here...
 ]
 
