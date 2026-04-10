@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://bi1v4x6sy2s02" path="res://assets/menu/ui/sprite_account_female.png" id="27_tw4xe"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
 [ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_2b6i1"]
+[ext_resource type="Script" uid="uid://dr4fcff4fl0b8" path="res://scripts/shop.gd" id="29_yc20g"]
 [ext_resource type="Texture2D" uid="uid://bp1vs1d8wp3b4" path="res://assets/menu/ui/ui_female.png" id="31_c1wyc"]
 [ext_resource type="Texture2D" uid="uid://bga2rc6rtmt5x" path="res://assets/menu/buttons_static/button_shop_static.png" id="32_tw4xe"]
 [ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_8ej76"]
@@ -644,6 +645,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
+script = ExtResource("29_yc20g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Popup_Shop" unique_id=1018009248]
 layout_mode = 2

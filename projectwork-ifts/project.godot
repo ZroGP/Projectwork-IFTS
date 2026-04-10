@@ -23,6 +23,7 @@ globals="*uid://2hwvgumx77iq"
 
 player=""
 stress_bar=""
+game=""
 
 [input_devices]
 

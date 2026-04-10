@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bysm5pwsvv8sl" path="res://assets/menu/buttons_pressed/button_english_pressed.png" id="26_qip0u"]
 [ext_resource type="Texture2D" uid="uid://d2e0ui66a8n3n" path="res://assets/menu/ui/sprite_account_male.png" id="27_qug01"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_rkipt"]
+[ext_resource type="Script" uid="uid://dr4fcff4fl0b8" path="res://scripts/shop.gd" id="29_5cpbb"]
 [ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_l0dfn"]
 [ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="30_1pevo"]
 [ext_resource type="Texture2D" uid="uid://6f67ykwqgogg" path="res://assets/menu/ui/ui_male.png" id="31_5cpbb"]
@@ -644,6 +645,7 @@ offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
+script = ExtResource("29_5cpbb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Popup_Shop" unique_id=1018009248]
 layout_mode = 2
@@ -749,6 +751,7 @@ autowrap_mode = 1
 
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_gavwa")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = -437.0
 offset_top = 219.0
