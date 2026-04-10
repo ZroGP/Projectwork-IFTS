@@ -1,44 +1,15 @@
 extends CharacterBody2D
 
-@onready var stress_bar: TextureProgressBar = $"../CanvasLayer/UI_General/Stress"
-@export var detection_area: Area2D 
+@export var detection_area: Area2D
 
 const SPEED: float = 30.0
 var direction: Vector2
 var nearby_interactables: Array[Node2D] = []
 var is_interacting: bool = false
 
-# guarda i mess rispetto al frame precedente
-var last_seen_visible_count: int = 0
-
 func _ready() -> void:
 	$InteractionArea.area_entered.connect(_on_interactable_entered)
 	$InteractionArea.area_exited.connect(_on_interactable_exited)
-
-func _process(_delta: float) -> void:
-	_handle_stress_logic()
-
-func _handle_stress_logic() -> void:
-	if not detection_area or not stress_bar:
-		return
-
-	var current_visible_count: int = 0
-	for area in detection_area.get_overlapping_areas():
-		if area.visible:
-			current_visible_count += 1
-	
-	if current_visible_count != last_seen_visible_count:
-		var change = current_visible_count - last_seen_visible_count
-		var amount_per_object = 10.0
-		var target_value = stress_bar.value - (change * amount_per_object)
-		target_value = clamp(target_value, 0, stress_bar.max_value)
-		
-		var tween = create_tween()
-		tween.tween_property(stress_bar, "value", target_value, 0.4)\
-			.set_trans(Tween.TRANS_SINE)\
-			.set_ease(Tween.EASE_OUT)
-		
-		last_seen_visible_count = current_visible_count
 
 func _on_interactable_entered(area: Area2D) -> void:
 	if area.is_in_group("interactable"):
@@ -73,6 +44,7 @@ func interact() -> void:
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
 	globals.coins += 10
+	globals.save_game()
 	print(globals.coins)
 	
 	await $AnimatedSprite2D.animation_finished

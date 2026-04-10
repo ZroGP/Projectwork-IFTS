@@ -136,3 +136,6 @@ position = Vector2(-235, 80)
 
 [node name="floor_mess7" parent="mess/mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
 position = Vector2(-246, 62)
+
+[editable path="CanvasLayer/ui_menu_female"]
+[editable path="CanvasLayer/ui_menu_male"]

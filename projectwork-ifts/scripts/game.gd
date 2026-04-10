@@ -1,17 +1,21 @@
 extends Node
 
 var mess_nodes: Array = []
+var stress_bar: TextureProgressBar = null
+var last_active_count: int = 0
 
 func _ready() -> void:
-	# Show the correct UI and hide the other
+	# Show the correct UI, hide the other, grab stress bar
 	if globals.player_character.contains("female"):
 		$CanvasLayer/ui_menu_female.show()
 		$CanvasLayer/ui_menu_male.hide()
+		stress_bar = $CanvasLayer/ui_menu_female/Stress
 	else:
 		$CanvasLayer/ui_menu_female.hide()
 		$CanvasLayer/ui_menu_male.show()
+		stress_bar = $CanvasLayer/ui_menu_male/Stress
 
-	# Spawn character at the same position it had in the editor
+	# Spawn character
 	if globals.player_character != "":
 		var character = load(globals.player_character).instantiate()
 		add_child(character)
@@ -30,6 +34,30 @@ func _ready() -> void:
 	# Timer is a direct child of mess
 	$mess/Timer.timeout.connect(_on_timer_timeout)
 	$mess/Timer.start()
+
+func _process(_delta: float) -> void:
+	if not stress_bar:
+		return
+
+	# Count how many mess nodes are currently active
+	var active_count: int = 0
+	for m in mess_nodes:
+		if m._is_active:
+			active_count += 1
+
+	# Only update stress bar when the count changes
+	if active_count != last_active_count:
+		var change = active_count - last_active_count
+		var amount_per_object = 10.0
+		var target_value = stress_bar.value - (change * amount_per_object)
+		target_value = clamp(target_value, 0, stress_bar.max_value)
+
+		var tween = create_tween()
+		tween.tween_property(stress_bar, "value", target_value, 0.4)\
+			.set_trans(Tween.TRANS_SINE)\
+			.set_ease(Tween.EASE_OUT)
+
+		last_active_count = active_count
 
 func _on_timer_timeout() -> void:
 	print("timer fired, mess_nodes: ", mess_nodes.size())
