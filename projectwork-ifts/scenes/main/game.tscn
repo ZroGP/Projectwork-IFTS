@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cmc57uawy772k" path="res://assets/menu/loading/background.png" id="1_gsayk"]
 [ext_resource type="Script" uid="uid://dq2a6cy6rbvwg" path="res://scripts/game.gd" id="1_oxcik"]
 [ext_resource type="Texture2D" uid="uid://cv5hfbq1fmecf" path="res://assets/room/room.png" id="2_gf1f2"]
+[ext_resource type="PackedScene" uid="uid://bu3y5wtr81l7g" path="res://scenes/ui/ui_menu_male.tscn" id="5_0u50o"]
 [ext_resource type="PackedScene" uid="uid://c8xnnxqhd0o5q" path="res://scenes/room/mess/floor_mess_1.tscn" id="7_y58yt"]
-[ext_resource type="PackedScene" uid="uid://bsctegqwk4fe3" path="res://scenes/characters/female-character.tscn" id="10_cgagh"]
 [ext_resource type="PackedScene" uid="uid://d2urybn2nac45" path="res://scenes/room/mess/floor_mess_2.tscn" id="11_c8nfc"]
-[ext_resource type="PackedScene" uid="uid://ce1r0r5yibses" path="res://scenes/ui/ui_menu.tscn" id="12_kb4no"]
+[ext_resource type="PackedScene" uid="uid://ce1r0r5yibses" path="res://scenes/ui/ui_menu_female.tscn" id="12_kb4no"]
 [ext_resource type="PackedScene" uid="uid://brf8deprlngk7" path="res://scenes/room/mess/floor_mess_3.tscn" id="12_oxcik"]
 [ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="13_obhq2"]
 [ext_resource type="PackedScene" uid="uid://brtre8p1reac7" path="res://scenes/room/mess/floor_mess_5.tscn" id="14_oxav3"]
@@ -30,6 +30,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0u50o"]
 
 [node name="room" type="StaticBody2D" unique_id=1648951168]
+script = ExtResource("1_oxcik")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=183385469]
 position = Vector2(467, -165)
@@ -58,7 +59,9 @@ shape = SubResource("CircleShape2D_0u50o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513509026]
 
-[node name="UI_General" parent="CanvasLayer" unique_id=545853388 groups=["stress_bar"] instance=ExtResource("12_kb4no")]
+[node name="ui_menu_female" parent="CanvasLayer" unique_id=545853388 instance=ExtResource("12_kb4no")]
+
+[node name="ui_menu_male" parent="CanvasLayer" unique_id=1049436116 instance=ExtResource("5_0u50o")]
 
 [node name="assets" type="Node2D" parent="." unique_id=2029774585]
 
@@ -105,7 +108,6 @@ position = Vector2(401, -168)
 position = Vector2(394, -164)
 
 [node name="mess" type="Node2D" parent="." unique_id=630301284]
-script = ExtResource("1_oxcik")
 
 [node name="Timer" type="Timer" parent="mess" unique_id=232330995]
 wait_time = 20.0
@@ -134,11 +136,3 @@ position = Vector2(-235, 80)
 
 [node name="floor_mess7" parent="mess/mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
 position = Vector2(-246, 62)
-
-[node name="Female" parent="." unique_id=1587920895 node_paths=PackedStringArray("detection_area") instance=ExtResource("10_cgagh")]
-position = Vector2(434, -154)
-detection_area = NodePath("../room/Area2D")
-
-[connection signal="timeout" from="mess/Timer" to="mess" method="_on_timer_timeout"]
-
-[editable path="CanvasLayer/UI_General"]

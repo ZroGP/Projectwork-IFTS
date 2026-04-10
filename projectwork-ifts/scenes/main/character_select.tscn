@@ -194,7 +194,8 @@ icon = ExtResource("6_ytlq3")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_78mqf")
 theme_override_font_sizes/font_size = 13
-text = "What is your name? "
+placeholder_text = "Insert your name here"
+alignment = 1
 
 [node name="start" type="Button" parent="VBoxContainer" unique_id=175083955]
 layout_mode = 2

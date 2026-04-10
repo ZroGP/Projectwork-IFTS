@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-
-@onready var stress_bar: TextureProgressBar = get_tree().get_first_node_in_group("stress_bar") as TextureProgressBar
+@onready var stress_bar: TextureProgressBar = $"../CanvasLayer/UI_General/Stress"
 @export var detection_area: Area2D 
 
 const SPEED: float = 30.0
@@ -15,32 +14,23 @@ var last_seen_visible_count: int = 0
 func _ready() -> void:
 	$InteractionArea.area_entered.connect(_on_interactable_entered)
 	$InteractionArea.area_exited.connect(_on_interactable_exited)
-	
 
 func _process(_delta: float) -> void:
-	#Aggiorna la barra
 	_handle_stress_logic()
 
 func _handle_stress_logic() -> void:
 	if not detection_area or not stress_bar:
 		return
 
-	# 1. conta quanti oggetti sono visibili in Area2D della stanza
 	var current_visible_count: int = 0
 	for area in detection_area.get_overlapping_areas():
 		if area.visible:
 			current_visible_count += 1
 	
-	# 2. se il conto cambia fa partire Tween
 	if current_visible_count != last_seen_visible_count:
 		var change = current_visible_count - last_seen_visible_count
 		var amount_per_object = 10.0
-		
-		# se il cambiamento e positivo sottraiamo la vita
-		# se e negativo la aggiungiamo
 		var target_value = stress_bar.value - (change * amount_per_object)
-		
-		# per non far andare il valore oltre 0-100
 		target_value = clamp(target_value, 0, stress_bar.max_value)
 		
 		var tween = create_tween()
@@ -49,7 +39,6 @@ func _handle_stress_logic() -> void:
 			.set_ease(Tween.EASE_OUT)
 		
 		last_seen_visible_count = current_visible_count
-
 
 func _on_interactable_entered(area: Area2D) -> void:
 	if area.is_in_group("interactable"):
@@ -68,7 +57,6 @@ func interact() -> void:
 	var dir: Vector2 = (closest.global_position - global_position).normalized()
 	$AnimatedSprite2D.flip_h = dir.x < 0.0
 
-	#animazione in base alla posizione
 	var angle := dir.angle()
 	var sector := int(round(angle / (PI / 4.0))) % 8
 	if sector < 0: sector += 8
@@ -82,10 +70,6 @@ func interact() -> void:
 		5, 7: interact_anim = &"interact_vertical_up"
 		6: interact_anim = &"interact_up"
 
-	is_interacting = true
-	$AnimatedSprite2D.play(interact_anim)
-	
-	# Global currency update
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
 	globals.coins += 10
@@ -109,8 +93,6 @@ func _get_closest(objects: Array[Node2D]) -> Node2D:
 			best = obj
 			best_dist = d
 	return best
-
-#Animations and movement
 
 func _physics_process(_delta: float) -> void:
 	if is_interacting:

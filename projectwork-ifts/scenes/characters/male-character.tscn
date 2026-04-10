@@ -378,7 +378,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1bab2")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_down",
 "speed": 5.0
 }, {
@@ -395,7 +395,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fvbly")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_side",
 "speed": 5.0
 }, {
@@ -412,7 +412,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1b5au")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_up",
 "speed": 5.0
 }, {
@@ -429,7 +429,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kffq1")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_vertical_down",
 "speed": 5.0
 }, {
@@ -446,7 +446,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yeqnj")
 }],
-"loop": true,
+"loop": false,
 "name": &"interact_vertical_up",
 "speed": 5.0
 }, {
@@ -577,7 +577,7 @@ detection_area = NodePath("InteractionArea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=960677456 groups=["player"]]
 sprite_frames = SubResource("SpriteFrames_y8rnv")
-animation = &"idle_down"
+animation = &"interact_vertical_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1779579311 groups=["player"]]
 position = Vector2(0, 4)

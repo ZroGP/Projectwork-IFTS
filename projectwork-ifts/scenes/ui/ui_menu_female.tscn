@@ -184,7 +184,7 @@ texture = ExtResource("35_r8yr2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_js1m4"]
 texture = ExtResource("34_mh5ls")
 
-[node name="UI_General" type="Control" unique_id=545853388]
+[node name="ui_menu_female" type="Control" unique_id=545853388]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -601,6 +601,19 @@ offset_bottom = 33.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_o31q1")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ay826")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dl3mx")
+
+[node name="Account_Name" type="Label" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=1466647043]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 78.00001
+offset_right = 349.185
+offset_bottom = 124.00001
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("28_8m5dn")
+theme_override_font_sizes/font_size = 16
+label_settings = SubResource("LabelSettings_2b6i1")
+autowrap_mode = 1
 
 [node name="Account_Coin_Count" type="Label" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=1121233510]
 unique_name_in_owner = true
