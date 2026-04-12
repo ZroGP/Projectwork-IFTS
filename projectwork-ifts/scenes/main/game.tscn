@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://brtre8p1reac7" path="res://scenes/room/mess/floor_mess_5.tscn" id="14_oxav3"]
 [ext_resource type="PackedScene" uid="uid://cdvaygbvu8ubt" path="res://scenes/room/windows/window3.tscn" id="15_0u50o"]
 [ext_resource type="PackedScene" uid="uid://dvgw4hp4u3bvs" path="res://scenes/room/mess/floor_mess_6.tscn" id="15_6lv7u"]
+[ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="15_c8nfc"]
 [ext_resource type="PackedScene" uid="uid://bvk7mwaecbd6b" path="res://scenes/room/mess/floor_mess_7.tscn" id="16_8k4wh"]
+[ext_resource type="AudioStream" uid="uid://cfk2ke24gc3sn" path="res://assets/music/Zambolino - White Mountains (freetouse.com).mp3" id="16_c8nfc"]
 [ext_resource type="PackedScene" uid="uid://81djoh30as2n" path="res://scenes/room/door.tscn" id="16_swbjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0u50o"]
@@ -62,7 +64,7 @@ position = Vector2(420, -167)
 [node name="mess" type="Node2D" parent="." unique_id=630301284]
 
 [node name="Timer" type="Timer" parent="mess" unique_id=232330995]
-wait_time = 20.0
+wait_time = 10.0
 autostart = true
 
 [node name="mess" type="Node2D" parent="mess" unique_id=653632723]
@@ -88,3 +90,11 @@ position = Vector2(-235, 80)
 
 [node name="floor_mess7" parent="mess/mess" unique_id=1844896288 instance=ExtResource("16_8k4wh")]
 position = Vector2(-246, 62)
+
+[node name="MusicNormal" type="AudioStreamPlayer" parent="." unique_id=596140824]
+stream = ExtResource("15_c8nfc")
+bus = &"MusicNormal"
+
+[node name="MusicStress" type="AudioStreamPlayer" parent="." unique_id=272102172]
+stream = ExtResource("16_c8nfc")
+bus = &"MusicStress"

@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://bdpqqiuanikt6" path="res://assets/menu/buttons_pressed/button_no_pressed.png" id="21_qkkkl"]
 [ext_resource type="Texture2D" uid="uid://dl3mcykjlpvy8" path="res://assets/menu/buttons_static/button_yes_static.png" id="22_a43mx"]
 [ext_resource type="Texture2D" uid="uid://bt06xcuskrggr" path="res://assets/menu/buttons_pressed/button_yes_pressed.png" id="23_8m5dn"]
-[ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="27_a43mx"]
 [ext_resource type="Texture2D" uid="uid://ds3ivhsaprouu" path="res://assets/menu/ui/volume_lever.png" id="27_qkkkl"]
 [ext_resource type="Texture2D" uid="uid://bi1v4x6sy2s02" path="res://assets/menu/ui/sprite_account_female.png" id="27_tw4xe"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
@@ -688,11 +687,6 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("29_2b6i1")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=226592893]
-stream = ExtResource("27_a43mx")
-autoplay = true
-bus = &"Music"
 
 [node name="Female_Shop_Home" type="MarginContainer" parent="." unique_id=382022068]
 layout_mode = 0

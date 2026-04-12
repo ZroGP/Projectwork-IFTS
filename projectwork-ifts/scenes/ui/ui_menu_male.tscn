@@ -30,7 +30,6 @@
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_rkipt"]
 [ext_resource type="Script" uid="uid://dr4fcff4fl0b8" path="res://scripts/shop.gd" id="29_5cpbb"]
 [ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_l0dfn"]
-[ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="30_1pevo"]
 [ext_resource type="Texture2D" uid="uid://6f67ykwqgogg" path="res://assets/menu/ui/ui_male.png" id="31_5cpbb"]
 [ext_resource type="Texture2D" uid="uid://bga2rc6rtmt5x" path="res://assets/menu/buttons_static/button_shop_static.png" id="32_gj7nh"]
 [ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_5lply"]
@@ -689,11 +688,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("29_l0dfn")
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=226592893]
-stream = ExtResource("30_1pevo")
-autoplay = true
-bus = &"Music"
-
 [node name="Female_Shop_Home" type="MarginContainer" parent="." unique_id=382022068]
 layout_mode = 0
 offset_left = -508.0
@@ -752,7 +746,6 @@ autowrap_mode = 1
 
 [node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_gavwa")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = -437.0
 offset_top = 219.0
