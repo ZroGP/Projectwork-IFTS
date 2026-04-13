@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://brf8deprlngk7" path="res://scenes/room/mess/floor_mess_3.tscn" id="12_oxcik"]
 [ext_resource type="PackedScene" uid="uid://do61ul5vg6uou" path="res://scenes/room/mess/floor_mess_4.tscn" id="13_obhq2"]
 [ext_resource type="PackedScene" uid="uid://brtre8p1reac7" path="res://scenes/room/mess/floor_mess_5.tscn" id="14_oxav3"]
-[ext_resource type="PackedScene" uid="uid://cdvaygbvu8ubt" path="res://scenes/room/windows/window3.tscn" id="15_0u50o"]
 [ext_resource type="PackedScene" uid="uid://dvgw4hp4u3bvs" path="res://scenes/room/mess/floor_mess_6.tscn" id="15_6lv7u"]
 [ext_resource type="AudioStream" uid="uid://c3fuwvpw1p6lm" path="res://assets/music/Filo Starquez - Park Vibes (freetouse.com).mp3" id="15_c8nfc"]
 [ext_resource type="PackedScene" uid="uid://bvk7mwaecbd6b" path="res://scenes/room/mess/floor_mess_7.tscn" id="16_8k4wh"]
 [ext_resource type="AudioStream" uid="uid://cfk2ke24gc3sn" path="res://assets/music/Zambolino - White Mountains (freetouse.com).mp3" id="16_c8nfc"]
 [ext_resource type="PackedScene" uid="uid://81djoh30as2n" path="res://scenes/room/door.tscn" id="16_swbjq"]
+[ext_resource type="PackedScene" uid="uid://b0bmeahl61d1k" path="res://scenes/room/windows/window2.tscn" id="17_nknkc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0u50o"]
 
@@ -40,6 +40,7 @@ position = Vector2(467, -165)
 texture = ExtResource("2_gf1f2")
 
 [node name="Area2D" type="Area2D" parent="room" unique_id=128351477]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -50,16 +51,18 @@ shape = SubResource("CircleShape2D_0u50o")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=513509026]
 
 [node name="ui_menu_female" parent="CanvasLayer" unique_id=545853388 instance=ExtResource("12_kb4no")]
+metadata/_edit_use_anchors_ = true
 
 [node name="ui_menu_male" parent="CanvasLayer" unique_id=1548518814 instance=ExtResource("5_0u50o")]
+metadata/_edit_use_anchors_ = true
 
 [node name="assets" type="Node2D" parent="." unique_id=2029774585]
 
-[node name="window3" parent="assets" unique_id=1522180996 instance=ExtResource("15_0u50o")]
-position = Vector2(508, -188)
-
 [node name="door" parent="assets" unique_id=1735913782 instance=ExtResource("16_swbjq")]
 position = Vector2(420, -167)
+
+[node name="window2" parent="assets" unique_id=40490128 instance=ExtResource("17_nknkc")]
+position = Vector2(520, -189)
 
 [node name="mess" type="Node2D" parent="." unique_id=630301284]
 

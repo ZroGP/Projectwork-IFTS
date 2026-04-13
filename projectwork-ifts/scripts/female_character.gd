@@ -73,6 +73,8 @@ func _physics_process(_delta: float) -> void:
 	velocity = SPEED * direction
 	move_and_slide()
 	_animate()
+	# Update z_index every frame so character sorts correctly against assets
+	z_index = 4 + int((global_position.y + 200) / 20)
 
 func _animate() -> void:
 	if direction == Vector2.ZERO:

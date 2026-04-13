@@ -1,7 +1,7 @@
 extends Node
 
 # Starting coins
-var coins: int = 270
+var coins: int = 270000
 
 # Character selection
 var player_name: String = ""

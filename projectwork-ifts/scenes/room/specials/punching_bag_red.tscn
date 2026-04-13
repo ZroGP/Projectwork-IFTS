@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cc0i13caccnbe"]
+
+[ext_resource type="Texture2D" uid="uid://cvmqf5fsgmpgp" path="res://assets/room/specials/punching_bag_red.png" id="1_crknr"]
+
+[node name="punching_bag_red" type="StaticBody2D" unique_id=143570025]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1534601576]
+texture = ExtResource("1_crknr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1519829807]
+polygon = PackedVector2Array(-1, 14, 4, 16, 9, 14, 4, 11)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=850783425]
+polygon = PackedVector2Array(-8, 9, -2, 9, -2, -4, -8, -4)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://or4n5gs2jbxh"]
+
+[ext_resource type="Texture2D" uid="uid://bso0vma5852d2" path="res://assets/room/specials/pouf_pink.png" id="1_fo6hu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fo6hu"]
+radius = 4.9990788
+height = 19.996315
+
+[node name="pouf_pink" type="StaticBody2D" unique_id=2041164999]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1116223209]
+texture = ExtResource("1_fo6hu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79077842]
+position = Vector2(0, 2)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_fo6hu")
