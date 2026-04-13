@@ -251,7 +251,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxEmpty_a43mx"
 max_value = 1.0
 step = 0.001
 script = ExtResource("4_a43mx")
-bus_name = "Music"
 
 [node name="Margin_Account" type="MarginContainer" parent="PopupMenu/BaseMenu/NinePatchRect" unique_id=982840633]
 layout_mode = 1
@@ -573,7 +572,6 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nwkdi")
 
 [node name="Pop_Account" type="MarginContainer" parent="." unique_id=1523058105]
 unique_name_in_owner = true
-visible = false
 layout_mode = 0
 offset_left = -218.0
 offset_top = -116.0
@@ -607,9 +605,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_dl3mx")
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 268.0
-offset_top = 78.00001
-offset_right = 349.185
-offset_bottom = 124.00001
+offset_top = 74.00001
+offset_right = 478.0
+offset_bottom = 120.00001
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("28_8m5dn")
 theme_override_font_sizes/font_size = 16
@@ -620,9 +618,9 @@ autowrap_mode = 1
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 284.0
-offset_top = 119.0
-offset_right = 365.185
-offset_bottom = 165.0
+offset_top = 110.0
+offset_right = 471.14282
+offset_bottom = 156.0
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("28_8m5dn")
 theme_override_font_sizes/font_size = 16

@@ -1,11 +1,11 @@
 extends Node
 
-# Starting coins (unchanged)
+# Starting coins
 var coins: int = 270
 
 # Character selection
 var player_name: String = ""
-var player_character: String = ""  # path to chosen character scene
+var player_character: String = "" 
 
 var last_scene: String = ""
 

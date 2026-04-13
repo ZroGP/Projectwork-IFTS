@@ -1,4 +1,3 @@
-# CharacterSelect.gd
 extends Control
 
 var selected_character := ""

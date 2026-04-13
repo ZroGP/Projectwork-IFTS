@@ -14,8 +14,6 @@ func _ready() -> void:
 
 func on_interact(_player) -> void:
 	_hide_mess()
-	# REMOVED: The internal respawn timer is gone so the same mess 
-	# doesn't force itself to spawn again immediately.
 
 func show_mess() -> void:
 	position = _home

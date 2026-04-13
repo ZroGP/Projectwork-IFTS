@@ -3,10 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cmc57uawy772k" path="res://assets/menu/loading/background.png" id="1_hivrv"]
 [ext_resource type="Script" uid="uid://beu7jdijgfx76" path="res://scripts/character_select.gd" id="1_nwm5s"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="2_78mqf"]
+[ext_resource type="Texture2D" uid="uid://hmve6ml3gwim" path="res://assets/menu/ui/question_mf.png" id="3_2wrmi"]
 [ext_resource type="Texture2D" uid="uid://cy0kdje0qe0v8" path="res://assets/charachters/male/male_yellow_shirt/male_rotate.png" id="3_78fh6"]
 [ext_resource type="Texture2D" uid="uid://b3t2kduc6gehv" path="res://assets/charachters/female/female_red_shirt/female_rotate.png" id="4_nwm5s"]
 [ext_resource type="Texture2D" uid="uid://d35b3lwamrxea" path="res://assets/menu/buttons_static/button_select_static.png" id="6_ytlq3"]
 [ext_resource type="Texture2D" uid="uid://evgoup78v0pj" path="res://assets/menu/buttons_pressed/button_select_pressed.png" id="7_1bvos"]
+[ext_resource type="Texture2D" uid="uid://c07dt72eb6rma" path="res://assets/menu/ui/sprite_dialog.png" id="8_w6ay8"]
+[ext_resource type="Texture2D" uid="uid://88uwcm7e8fp3" path="res://assets/menu/buttons_static/button_play_static.png" id="10_cupk6"]
+[ext_resource type="Texture2D" uid="uid://c8f2xdvhc4eh3" path="res://assets/menu/buttons_pressed/button_play_pressed.png" id="11_a276f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ytlq3"]
 atlas = ExtResource("3_78fh6")
@@ -145,6 +149,9 @@ texture = ExtResource("7_1bvos")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7wsrf"]
 texture = ExtResource("6_ytlq3")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2wrmi"]
+texture = ExtResource("8_w6ay8")
+
 [node name="character_select" type="Control" unique_id=94003620]
 layout_mode = 3
 anchors_preset = 15
@@ -157,19 +164,13 @@ script = ExtResource("1_nwm5s")
 [node name="background" type="Sprite2D" parent="." unique_id=587755959]
 texture = ExtResource("1_hivrv")
 
+[node name="m or f?" type="Sprite2D" parent="." unique_id=650129555]
+position = Vector2(-5.9604645e-08, -57)
+scale = Vector2(2.6666667, 2.6666667)
+texture = ExtResource("3_2wrmi")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2027682687]
 zoom = Vector2(3.6, 3.6)
-
-[node name="male_female?" type="Label" parent="." unique_id=1965244887]
-layout_mode = 0
-offset_left = -75.0
-offset_top = -71.0
-offset_right = 77.0
-offset_bottom = -48.0
-theme_override_fonts/font = ExtResource("2_78mqf")
-text = "Are you a male or a female?"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="male" type="AnimatedSprite2D" parent="." unique_id=1011525378]
 position = Vector2(-83, -18)
@@ -221,22 +222,23 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_7wsrf")
 
 [node name="player_name" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=1611538998]
 layout_mode = 0
-offset_left = 99.0
+offset_left = 98.0
 offset_top = 128.0
-offset_right = 223.0
+offset_right = 222.0
 offset_bottom = 153.0
 theme_override_fonts/font = ExtResource("2_78mqf")
 theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_2wrmi")
 placeholder_text = "Insert your name here"
 alignment = 1
 
-[node name="start" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=352866105]
+[node name="start" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=1940939836]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 71.0
-offset_right = 160.0
-offset_bottom = 84.0
+offset_left = 137.0
+offset_top = 74.0
+offset_right = 160.5
+offset_bottom = 87.0
 scale = Vector2(2, 2)
-theme_override_styles/normal = SubResource("StyleBoxTexture_w6ay8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_opjl8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7wsrf")
+texture_normal = ExtResource("10_cupk6")
+texture_pressed = ExtResource("11_a276f")
+texture_disabled = ExtResource("11_a276f")
