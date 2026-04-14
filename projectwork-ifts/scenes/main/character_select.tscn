@@ -231,6 +231,7 @@ theme_override_font_sizes/font_size = 13
 theme_override_styles/normal = SubResource("StyleBoxTexture_2wrmi")
 placeholder_text = "Insert your name here"
 alignment = 1
+max_length = 10
 
 [node name="start" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=1940939836]
 layout_mode = 0

@@ -729,7 +729,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("29_l0dfn")
 
-[node name="Female_Shop_Home" type="MarginContainer" parent="." unique_id=382022068]
+[node name="Male_Shop_Home" type="MarginContainer" parent="." unique_id=382022068]
 layout_mode = 0
 offset_left = -508.0
 offset_top = -269.0
@@ -737,19 +737,19 @@ offset_right = -348.0
 offset_bottom = -207.0
 scale = Vector2(2, 2)
 
-[node name="V_Shop_Home" type="VBoxContainer" parent="Female_Shop_Home" unique_id=1927005193]
+[node name="V_Shop_Home" type="VBoxContainer" parent="Male_Shop_Home" unique_id=1927005193]
 layout_mode = 2
 
-[node name="H_Shop_Home" type="HBoxContainer" parent="Female_Shop_Home/V_Shop_Home" unique_id=2120514375]
+[node name="H_Shop_Home" type="HBoxContainer" parent="Male_Shop_Home/V_Shop_Home" unique_id=2120514375]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home" unique_id=138908514]
+[node name="NinePatchRect" type="NinePatchRect" parent="Male_Shop_Home/V_Shop_Home/H_Shop_Home" unique_id=138908514]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("31_5cpbb")
 
-[node name="Button_Shop" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=1243040475]
+[node name="Button_Shop" type="Button" parent="Male_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=1243040475]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 7.5
@@ -760,7 +760,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xr51k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_318wq")
 theme_override_styles/hover = SubResource("StyleBoxTexture_8k0ei")
 
-[node name="Button_Home" type="Button" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=331472215]
+[node name="Button_Home" type="Button" parent="Male_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=331472215]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -772,7 +772,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jfdmo")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dgg1w")
 theme_override_styles/hover = SubResource("StyleBoxTexture_js1m4")
 
-[node name="Coin_Count" type="Label" parent="Female_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=697831109]
+[node name="Coin_Count" type="Label" parent="Male_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect" unique_id=697831109]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 65.5

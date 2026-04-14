@@ -1,15 +1,23 @@
 extends Node
 
-# Starting coins
-var coins: int = 270000
 
+
+const MAX_COINS: int = 999 
+var coins: int = 999:
+	set(value):
+		coins = clamp(value, 0, MAX_COINS)
 # Character selection
 var player_name: String = ""
 var player_character: String = "" 
-
 var last_scene: String = ""
 
 const SAVE_PATH = "user://save.cfg"
+
+
+func add_coins(amount: int):
+	# The clamp ensures coins stay between 0 and 999 
+	coins = clamp(coins + amount, 0, MAX_COINS)
+	print("Coins updated: ", coins)
 
 func save_game():
 	var config = ConfigFile.new()
@@ -26,7 +34,7 @@ func load_game() -> bool:
 	player_name      = config.get_value("player", "name",       "")
 	player_character = config.get_value("player", "character",  "")
 	last_scene       = config.get_value("player", "last_scene", "")
-	coins            = config.get_value("player", "coins",      270)
+	coins            = config.get_value("player", "coins",      0) # Match starting coins
 	return true
 
 func has_save() -> bool:

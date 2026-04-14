@@ -13,6 +13,7 @@ func _ready() -> void:
 	$CollisionPolygon2D.set_deferred("disabled", true)
 
 func on_interact(_player) -> void:
+	globals.add_coins(10)
 	_hide_mess()
 
 func show_mess() -> void:

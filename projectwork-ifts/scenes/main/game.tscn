@@ -102,3 +102,6 @@ bus = &"MusicNormal"
 [node name="MusicStress" type="AudioStreamPlayer" parent="." unique_id=272102172]
 stream = ExtResource("16_c8nfc")
 bus = &"MusicStress"
+
+[editable path="CanvasLayer/ui_menu_female"]
+[editable path="CanvasLayer/ui_menu_male"]
