@@ -6,8 +6,8 @@ var last_active_count: int = 0
 
 # --- Dynamic Music References ---
 var music_normal: AudioStreamPlayer = null
-var music_stress: AudioStreamPlayer = null
-var is_stress_music_active: bool = false
+#var music_stress: AudioStreamPlayer = null
+#var is_stress_music_active: bool = false
 
 func _ready() -> void:
 	# 1. Setup UI and Music for chosen character
@@ -16,20 +16,20 @@ func _ready() -> void:
 		$CanvasLayer/ui_menu_male.hide()
 		stress_bar = $CanvasLayer/ui_menu_female/Stress
 		music_normal = $MusicNormal
-		music_stress = $MusicStress
+		#music_stress = $MusicStress
 	else:
 		$CanvasLayer/ui_menu_female.hide()
 		$CanvasLayer/ui_menu_male.show()
 		stress_bar = $CanvasLayer/ui_menu_male/Stress
 		music_normal = $MusicNormal
-		music_stress = $MusicStress
+		#music_stress = $MusicStress
 
 	# 2. Initial Audio State
-	if music_normal:
-		music_normal.volume_db = 0.0
-		music_normal.play()
-	if music_stress:
-		music_stress.stop()
+	#if music_normal:
+		#music_normal.volume_db = 0.0
+		#music_normal.play()
+	#if music_stress:
+		#music_stress.stop()
 
 	# 3. Spawn character
 	if globals.player_character != "":
@@ -49,7 +49,7 @@ func _ready() -> void:
 	$mess/Timer.start()
 
 func _process(_delta: float) -> void:
-	if not stress_bar or not music_normal or not music_stress:
+	if not stress_bar or not music_normal:#or not music_stress:
 		return
 
 	var active_count: int = 0
@@ -71,24 +71,24 @@ func _process(_delta: float) -> void:
 		last_active_count = active_count
 		
 		# --- Sequential Music Switch ---
-		var threshold = stress_bar.max_value * 0.4 #value to change based on the stress now setted at 40% of the bar
-		if target_value <= threshold and not is_stress_music_active:
-			_switch_music_sequential(music_normal, music_stress)
-			is_stress_music_active = true
-		elif target_value > threshold and is_stress_music_active:
-			_switch_music_sequential(music_stress, music_normal)
-			is_stress_music_active = false
+		#var threshold = stress_bar.max_value * 0.4 #value to change based on the stress now setted at 40% of the bar
+		#if target_value <= threshold and not is_stress_music_active:
+			#_switch_music_sequential(music_normal, music_stress)
+			#is_stress_music_active = true
+		#elif target_value > threshold and is_stress_music_active:
+			#_switch_music_sequential(music_stress, music_normal)
+			#is_stress_music_active = false
 
-func _switch_music_sequential(fade_out_node: AudioStreamPlayer, fade_in_node: AudioStreamPlayer) -> void:
-	var tween = create_tween()
-	# Fade out current to silence
-	tween.tween_property(fade_out_node, "volume_db", -80.0, 0.5)
-	# STOP it so it doesn't play in background
-	tween.tween_callback(fade_out_node.stop)
-	# Start new one silent and fade it up
-	tween.tween_callback(fade_in_node.play)
-	tween.tween_property(fade_in_node, "volume_db", -80.0, 0.0)
-	tween.tween_property(fade_in_node, "volume_db", 0.0, 0.8)
+#func _switch_music_sequential(fade_out_node: AudioStreamPlayer, fade_in_node: AudioStreamPlayer) -> void:
+	#var tween = create_tween()
+	## Fade out current to silence
+	#tween.tween_property(fade_out_node, "volume_db", -80.0, 0.5)
+	## STOP it so it doesn't play in background
+	#tween.tween_callback(fade_out_node.stop)
+	## Start new one silent and fade it up
+	#tween.tween_callback(fade_in_node.play)
+	#tween.tween_property(fade_in_node, "volume_db", -80.0, 0.0)
+	#tween.tween_property(fade_in_node, "volume_db", 0.0, 0.8)
 
 func _on_timer_timeout() -> void:
 	var available: Array = []

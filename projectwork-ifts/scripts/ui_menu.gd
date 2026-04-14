@@ -23,6 +23,11 @@ extends Control
 @onready var account_button = %Button_Account  
 @onready var account_popup = %Pop_Account
 @onready var exit_account = %Exit_Account
+@onready var account_delete = %Account_Del
+# Delete
+@onready var popup_del = %Popup_Del
+@onready var del_yes = %Del_yes
+@onready var del_no = %Del_no
 
 # Home/Shop
 @onready var shop_button = %Button_Shop
@@ -59,9 +64,13 @@ func _ready():
 	#Account
 	account_button.pressed.connect(_on_account_button_pressed)
 	exit_account.pressed.connect(_on_exit_account_pressed)
-	
+	account_delete.pressed.connect(_on_account_delete_pressed)
 	account_popup.hide()
 	
+	#Delete account
+	del_yes.pressed.connect(_on_del_yes_pressed)
+	del_no.pressed.connect(_on_del_no_pressed)
+	popup_del.hide()
 	# SHop/Home
 	shop_button.pressed.connect(_on_shop_button_pressed)
 	popup_shop.hide()
@@ -112,11 +121,23 @@ func _on_no_quit_pressed():
 	quit_popup.hide()
 	menu_container.show()
 	
+func _on_yes_quit_pressed():
+	get_tree().quit()
+	
 func _on_account_button_pressed():
 	menu_container.hide()
 	account_popup.show()
 	
-func _on_yes_quit_pressed():
+func _on_account_delete_pressed():
+	account_popup.hide()
+	popup_del.show()
+
+func _on_del_no_pressed():
+	popup_del.hide()
+	account_popup.show()
+	
+func _on_del_yes_pressed():
+	DirAccess.remove_absolute(globals.SAVE_PATH)
 	get_tree().quit()
 	
 func _on_exit_account_pressed():

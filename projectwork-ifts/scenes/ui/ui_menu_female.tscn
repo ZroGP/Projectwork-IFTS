@@ -29,7 +29,9 @@
 [ext_resource type="Texture2D" uid="uid://bi1v4x6sy2s02" path="res://assets/menu/ui/sprite_account_female.png" id="27_tw4xe"]
 [ext_resource type="FontFile" uid="uid://drjg74ch7ja12" path="res://assets/fonts/PIXELADE.TTF" id="28_8m5dn"]
 [ext_resource type="Texture2D" uid="uid://b0age538pbw1b" path="res://assets/menu/ui/home_shop_ui_base.png" id="29_2b6i1"]
+[ext_resource type="Texture2D" uid="uid://p1kdftvntci3" path="res://assets/menu/buttons_static/button_delete_static.png" id="29_xgy2v"]
 [ext_resource type="Script" uid="uid://dr4fcff4fl0b8" path="res://scripts/shop.gd" id="29_yc20g"]
+[ext_resource type="Texture2D" uid="uid://dqvf7c7tmc7kr" path="res://assets/menu/buttons_pressed/button_delete_pressed.png" id="30_8sai1"]
 [ext_resource type="Texture2D" uid="uid://bp1vs1d8wp3b4" path="res://assets/menu/ui/ui_female.png" id="31_c1wyc"]
 [ext_resource type="Texture2D" uid="uid://bga2rc6rtmt5x" path="res://assets/menu/buttons_static/button_shop_static.png" id="32_tw4xe"]
 [ext_resource type="Texture2D" uid="uid://x6qgcih27yal" path="res://assets/menu/buttons_pressed/button_shop_pressed.png" id="33_8ej76"]
@@ -166,6 +168,15 @@ texture = ExtResource("2_5e4in")
 font_size = 43
 shadow_size = 0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e3h1q"]
+texture = ExtResource("29_xgy2v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yy18p"]
+texture = ExtResource("30_8sai1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e5fxx"]
+texture = ExtResource("29_xgy2v")
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr51k"]
 texture = ExtResource("32_tw4xe")
 
@@ -183,6 +194,24 @@ texture = ExtResource("35_r8yr2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_js1m4"]
 texture = ExtResource("34_mh5ls")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_afu28"]
+texture = ExtResource("22_a43mx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xgy2v"]
+texture = ExtResource("23_8m5dn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oi6yf"]
+texture = ExtResource("22_a43mx")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2t1bx"]
+texture = ExtResource("20_p76uh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sai1"]
+texture = ExtResource("21_qkkkl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s1uxg"]
+texture = ExtResource("20_p76uh")
 
 [node name="ui_menu_female" type="Control" unique_id=545853388]
 layout_mode = 3
@@ -628,6 +657,18 @@ text = "0"
 label_settings = SubResource("LabelSettings_2b6i1")
 autowrap_mode = 1
 
+[node name="Account_Del" type="Button" parent="Pop_Account/VAccount/HAccount/NinePatchRect" unique_id=392496077]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 174.0
+offset_top = 151.0
+offset_right = 202.0
+offset_bottom = 163.0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_e3h1q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yy18p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e5fxx")
+
 [node name="Popup_Shop" type="MarginContainer" parent="." unique_id=1855182190]
 unique_name_in_owner = true
 layout_mode = 1
@@ -772,3 +813,54 @@ value = 100.0
 nine_patch_stretch = true
 stretch_margin_top = 8
 texture_progress = ExtResource("36_8ej76")
+
+[node name="Popup_Del" type="MarginContainer" parent="." unique_id=776091786]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -128.0
+offset_right = -113.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup_Del" unique_id=311342795]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup_Del/VBoxContainer" unique_id=1298826102]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Popup_Del/VBoxContainer/HBoxContainer" unique_id=500216497]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("19_xsf2i")
+
+[node name="Del_yes" type="Button" parent="Popup_Del/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=900044208]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 34.0
+offset_right = 45.0
+offset_bottom = 46.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_afu28")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xgy2v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oi6yf")
+
+[node name="Del_no" type="Button" parent="Popup_Del/VBoxContainer/HBoxContainer/NinePatchRect" unique_id=911795973]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 67.0
+offset_top = 34.0
+offset_right = 93.0
+offset_bottom = 46.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_2t1bx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8sai1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s1uxg")

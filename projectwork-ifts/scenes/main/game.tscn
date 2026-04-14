@@ -96,6 +96,7 @@ position = Vector2(-246, 62)
 
 [node name="MusicNormal" type="AudioStreamPlayer" parent="." unique_id=596140824]
 stream = ExtResource("15_c8nfc")
+autoplay = true
 bus = &"MusicNormal"
 
 [node name="MusicStress" type="AudioStreamPlayer" parent="." unique_id=272102172]
