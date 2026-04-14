@@ -11,6 +11,7 @@ func _ready() -> void:
 	visible = false
 	_is_active = false
 	$CollisionPolygon2D.set_deferred("disabled", true)
+	z_index = 5
 
 func on_interact(_player) -> void:
 	globals.add_coins(10)
