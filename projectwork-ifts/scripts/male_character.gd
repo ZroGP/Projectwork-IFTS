@@ -55,7 +55,7 @@ func interact() -> void:
 
 	if closest.has_method("on_interact"):
 		closest.on_interact(self)
-
+	globals.save_game()
 func _get_closest(objects: Array[Node2D]) -> Node2D:
 	var best: Node2D = objects[0]
 	var best_dist := global_position.distance_squared_to(best.global_position)
@@ -67,15 +67,20 @@ func _get_closest(objects: Array[Node2D]) -> Node2D:
 	return best
 
 func _physics_process(_delta: float) -> void:
-	if is_interacting:
+	# STOP MOVEMENT IF UI IS OPEN
+	if globals.is_ui_active or is_interacting:
+		velocity = Vector2.ZERO
+		direction = Vector2.ZERO # Reset direction for the animator
+		_animate() # This will force the idle animation
+		move_and_slide()
 		return
+	
 	direction = Input.get_vector(&"ui_left", &"ui_right", &"ui_up", &"ui_down")
 	velocity = SPEED * direction
 	move_and_slide()
 	_animate()
-	# Update z_index every frame so character sorts correctly against assets
+	
 	z_index = 11 + int((global_position.y + 200) / 20)
-
 func _animate() -> void:
 	if direction == Vector2.ZERO:
 		var current := $AnimatedSprite2D.animation as String

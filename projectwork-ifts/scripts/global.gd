@@ -1,21 +1,20 @@
 extends Node
 
-
-
-const MAX_COINS: int = 999 
-var coins: int = 999:
+const MAX_COINS: int = 999
+var coins: int = 270:
 	set(value):
 		coins = clamp(value, 0, MAX_COINS)
-# Character selection
+
+# MASTER SWITCH: When true, player cannot move or interact
+var is_ui_active: bool = false 
+
 var player_name: String = ""
 var player_character: String = "" 
 var last_scene: String = ""
 
 const SAVE_PATH = "user://save.cfg"
 
-
 func add_coins(amount: int):
-	# The clamp ensures coins stay between 0 and 999 
 	coins = clamp(coins + amount, 0, MAX_COINS)
 	print("Coins updated: ", coins)
 
@@ -34,7 +33,7 @@ func load_game() -> bool:
 	player_name      = config.get_value("player", "name",       "")
 	player_character = config.get_value("player", "character",  "")
 	last_scene       = config.get_value("player", "last_scene", "")
-	coins            = config.get_value("player", "coins",      0) # Match starting coins
+	coins            = config.get_value("player", "coins",      0) 
 	return true
 
 func has_save() -> bool:

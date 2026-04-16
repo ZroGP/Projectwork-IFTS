@@ -24,6 +24,7 @@ extends Control
 @onready var account_popup = %Pop_Account
 @onready var exit_account = %Exit_Account
 @onready var account_delete = %Account_Del
+
 # Delete
 @onready var popup_del = %Popup_Del
 @onready var del_yes = %Del_yes
@@ -32,70 +33,64 @@ extends Control
 # Home/Shop
 @onready var shop_button = %Button_Shop
 @onready var popup_shop = %Popup_Shop
-
 @onready var home_button = %Button_Home
 @onready var popup_home = %Popup_Home
 
+# Gameplay UI
 @onready var joystick = %VirtualJoystick
 @onready var interact = %interact
 
 func _ready():
-	#Settings
 	menu_container.hide()
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)
-	
-	#Credits
 	credits_button.pressed.connect(_on_credits_button_pressed)
 	exit_credits.pressed.connect(_on_exit_credits_pressed)
 	credits_popup.hide()
-	
-	#Langages
 	languages_button.pressed.connect(_on_languages_button_pressed)
 	exit_languages.pressed.connect(_on_exit_languages_pressed)
 	languages_popup.hide()
-	
-	#Quit
 	quit_button.pressed.connect(_on_quit_button_pressed)
 	no_quit.pressed.connect(_on_no_quit_pressed)
 	yes_quit.pressed.connect(_on_yes_quit_pressed)
 	quit_popup.hide()
-	
-	#Account
 	account_button.pressed.connect(_on_account_button_pressed)
 	exit_account.pressed.connect(_on_exit_account_pressed)
 	account_delete.pressed.connect(_on_account_delete_pressed)
 	account_popup.hide()
-	
-	#Delete account
 	del_yes.pressed.connect(_on_del_yes_pressed)
 	del_no.pressed.connect(_on_del_no_pressed)
 	popup_del.hide()
-	# SHop/Home
 	shop_button.pressed.connect(_on_shop_button_pressed)
 	popup_shop.hide()
-	
 	home_button.pressed.connect(_on_home_button_pressed)
 	popup_home.hide()
+
+## Helper to lock/unlock gameplay
+func _set_gameplay_active(active: bool):
+	globals.is_ui_active = !active
+	joystick.visible = active
+	interact.visible = active
 	
+	# joystick.disabled handles set_process_input internally
+	joystick.disabled = !active
 	
-	
+	if interact is Button or interact is TextureButton:
+		interact.disabled = !active
+
 func _on_settings_button_pressed():
+	_set_gameplay_active(false)
 	popup_shop.hide()
 	popup_home.hide()
-	joystick.hide()
-	interact.hide()
 	credits_popup.hide()
 	languages_popup.hide()
 	quit_popup.hide()
 	account_popup.hide()
 	menu_container.show()
-	
-	
+
 func _on_exit_button_pressed():
 	menu_container.hide()
-	joystick.show()
-	interact.show()
+	_set_gameplay_active(true)
 	
 func _on_credits_button_pressed():
 	menu_container.hide()
@@ -143,16 +138,13 @@ func _on_del_yes_pressed():
 func _on_exit_account_pressed():
 	account_popup.hide()
 	menu_container.show()
-	
-	
-	
+
 func _on_shop_button_pressed():
 	if popup_shop.visible:
 		popup_shop.hide()
-		joystick.show()
-		interact.show()
-
+		_set_gameplay_active(true)
 	else:
+		_set_gameplay_active(false)
 		popup_shop.show()
 		credits_popup.hide()
 		languages_popup.hide()
@@ -160,38 +152,22 @@ func _on_shop_button_pressed():
 		account_popup.hide()
 		menu_container.hide()
 		popup_home.hide()
-		joystick.hide()
-		interact.hide()
-		
 		
 func _on_home_button_pressed():
 	if popup_home.visible:
 		popup_home.hide()
-		joystick.show()
-		interact.show()
+		_set_gameplay_active(true)
 	else:
+		_set_gameplay_active(false)
 		credits_popup.hide()
 		languages_popup.hide()
 		quit_popup.hide()
 		account_popup.hide()
-		joystick.hide()
-		interact.hide()
 		popup_home.show()
 		menu_container.hide()
 		popup_shop.hide()
-	
-	
-	
-	
-	
-	
-	
-# Called every frame.
+
 func _process(_delta: float) -> void:
 	%Coin_Count.text = str(globals.coins)
 	%Account_Coin_Count.text = str(globals.coins)
 	%Account_Name.text = str(globals.player_name)
-
-
-func _on_timer_timeout() -> void:
-	pass 
