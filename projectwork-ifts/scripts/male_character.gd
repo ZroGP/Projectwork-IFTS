@@ -43,7 +43,6 @@ func interact() -> void:
 
 	is_interacting = true
 	$AnimatedSprite2D.play(interact_anim)
-	globals.coins += 10
 	globals.save_game()
 	print(globals.coins)
 	

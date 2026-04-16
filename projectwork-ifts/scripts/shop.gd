@@ -11,8 +11,7 @@ const ASSETS_MALE = [
 		"id": "cat_void", "name": "Void", "cost": 3, "category": "Pets",
 		"icon": "res://assets/pets/cat_void.png",
 		"scene": "res://scenes/room/pets/cat_void.tscn",
-		"position": Vector2(415, -145), "z": 5,
-		"requires": ""
+		"position": Vector2(415, -145), "z": 5
 	},
 	# --- Beds ---
 	{
@@ -582,7 +581,11 @@ func _on_icon_pressed(asset: Dictionary) -> void:
 
 	_place_asset(asset)
 	_save_state()
-	_fill_panel(asset["category"])
+
+	# Refresh ALL panels because buying one asset may unlock items in other categories
+	# (e.g. buying a shelf unlocks books/cactus in Decorations)
+	for c in _panels.keys():
+		_fill_panel(c)
 
 	print("Placed: ", asset["name"], " | Coins left: ", globals.coins)
 
