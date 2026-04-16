@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bufmmguekm5m1"
-path="res://.godot/imported/test_icon_black.png-5c20c2bc2a181fb2368406dbc6d585b7.ctex"
+uid="uid://cmt1ulawtlpf6"
+path="res://.godot/imported/cozy_corner_icon.png-f0b9e844e45fd72b9deff169ca62fcb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_icon_black.png"
-dest_files=["res://.godot/imported/test_icon_black.png-5c20c2bc2a181fb2368406dbc6d585b7.ctex"]
+source_file="res://cozy_corner_icon.png"
+dest_files=["res://.godot/imported/cozy_corner_icon.png-f0b9e844e45fd72b9deff169ca62fcb1.ctex"]
 
 [params]
 

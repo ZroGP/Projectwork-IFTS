@@ -14,7 +14,7 @@ func _ready() -> void:
 	z_index = 5
 
 func on_interact(_player) -> void:
-	globals.add_coins(10)
+	globals.add_coins(25)
 	_hide_mess()
 
 func show_mess() -> void:

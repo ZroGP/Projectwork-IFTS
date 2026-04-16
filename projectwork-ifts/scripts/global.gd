@@ -1,7 +1,7 @@
 extends Node
 
-const MAX_COINS: int = 999
-var coins: int = 270:
+const MAX_COINS: int = 9999
+var coins: int = 300:
 	set(value):
 		coins = clamp(value, 0, MAX_COINS)
 
