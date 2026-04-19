@@ -409,8 +409,9 @@ const ASSETS_FEMALE = [
 		"scene": "res://scenes/room/specials/pouf_cyan.tscn",
 		"position": Vector2(402, -143), "z": 3
 	},
-	# Add more female assets here...
+	
 ]
+
 
 const FONT_PATH = "res://assets/fonts/PIXELADE.TTF"
 const FONT_SIZE = 14
@@ -431,7 +432,7 @@ func _ready() -> void:
 	else:
 		ASSETS = ASSETS_MALE
 	_build_ui()
-	_load_state()
+	call_deferred("_load_state")
 
 func _build_ui() -> void:
 	var scroll = ScrollContainer.new()
@@ -561,11 +562,9 @@ func _is_unlocked(asset: Dictionary) -> bool:
 
 func _on_icon_pressed(asset: Dictionary) -> void:
 	if not _is_unlocked(asset):
-		print("Locked! Buy ", asset.get("requires", ""), " first.")
 		return
 
 	if globals.coins < asset["cost"]:
-		print("Not enough coins for: ", asset["name"])
 		return
 
 	var slot = _slot_key(asset["position"])
@@ -577,20 +576,20 @@ func _on_icon_pressed(asset: Dictionary) -> void:
 				break
 
 	globals.coins -= asset["cost"]
-	globals.save_game()
 
 	_place_asset(asset)
 	_save_state()
 
-	# Refresh ALL panels because buying one asset may unlock items in other categories
-	# (e.g. buying a shelf unlocks books/cactus in Decorations)
 	for c in _panels.keys():
 		_fill_panel(c)
 
-	print("Placed: ", asset["name"], " | Coins left: ", globals.coins)
-
 func _place_asset(asset: Dictionary) -> void:
-	var assets_node = get_tree().root.get_node("room/assets")
+	var root = get_tree().root
+	var assets_node = root.get_node_or_null("room/assets")
+	
+	if not assets_node:
+		return
+	
 	var slot = _slot_key(asset["position"])
 
 	if _spawned.has(slot) and is_instance_valid(_spawned[slot]):
@@ -599,13 +598,11 @@ func _place_asset(asset: Dictionary) -> void:
 
 	var scene = load(asset["scene"])
 	if scene == null:
-		print("ERROR: could not load scene: ", asset["scene"])
 		return
 
 	var instance = scene.instantiate()
 	assets_node.add_child(instance)
 	instance.position = asset["position"]
-	# Apply manual z_index — tune the "z" value per asset in the catalogue above
 	instance.z_index = asset.get("z", 0)
 
 	_spawned[slot] = instance
@@ -639,4 +636,4 @@ func _load_state() -> void:
 	var config = ConfigFile.new()
 	if config.load(globals.SAVE_PATH) == OK:
 		_placed = config.get_value("shop", "placed", {})
-	_restore_placed_assets()
+		_restore_placed_assets()

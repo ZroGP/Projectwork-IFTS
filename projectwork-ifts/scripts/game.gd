@@ -5,8 +5,9 @@ var stress_bar: TextureProgressBar = null
 var last_active_count: int = 0
 var coin_label: Label = null
 
+#this give the ui and spawn the player after the character selection, it also collects the mess in to the var mess_container for easy access
 func _ready() -> void:
-	# 1. Setup UI based on character 
+	#Setup ui based on character 
 	if globals.player_character.contains("female"):
 		$CanvasLayer/ui_menu_female.show()
 		$CanvasLayer/ui_menu_male.hide()
@@ -16,29 +17,80 @@ func _ready() -> void:
 		$CanvasLayer/ui_menu_female.hide()
 		$CanvasLayer/ui_menu_male.show()
 		stress_bar = $CanvasLayer/ui_menu_male/Stress
-		# Double check this path in your editor if it was copied from female UI 
 		coin_label = $CanvasLayer/ui_menu_male/Male_Shop_Home/V_Shop_Home/H_Shop_Home/NinePatchRect/Coin_Count
 
-	# 2. Spawn character 
 	if globals.player_character != "":
-		var character = load(globals.player_character).instantiate()
-		add_child(character)
-		character.position = Vector2(430, -140)
-		character.add_to_group("player")
+		spawn_player()
 	
-	# 3. Initialize mess nodes and listen for signals 
-	for child in $mess/mess.get_children():
-		if child is Area2D:
-			mess_nodes.append(child)
-			child.mess_cleaned.connect(_on_mess_cleaned)
+	# Initialize mess nodes 
+	var mess_container = get_node_or_null("mess/mess")
+	if mess_container:
+		for child in mess_container.get_children():
+			if child is Area2D:
+				mess_nodes.append(child)
+				child.mess_cleaned.connect(_on_mess_cleaned)
+	else:
+		pass  
+	if has_node("mess/Timer"):
+		$mess/Timer.timeout.connect(_on_timer_timeout)
+		$mess/Timer.start()
+	if coin_label:
+		globals.set_meta("coin_label", coin_label)
+func spawn_player():
+	#loads the image of the character
+	var character_scene = load(globals.player_character)
+	#this adds the nodes to the player like CharacterBody2D, collision etc
+	var player = character_scene.instantiate()
+	
+	# Add the player as child of the PlayerContainer
+	$PlayerContainer.add_child(player) 
+	
+	# Use saved position if available, otherwise default
+	if globals.last_position != Vector2.ZERO:
+		player.position = globals.last_position
+		print("Loading player at saved position: ", globals.last_position)
+	else:
+		player.position = Vector2(430, -140)
+	
+	await get_tree().process_frame
+	
+	# Find the specific joystick for the chosen gender
+	var joystick_path = "CanvasLayer/ui_menu_female/Control_Joystick/JoystickFemale" if globals.player_character.contains("female") else "CanvasLayer/ui_menu_male/Control_Joystick/JoystickMale"
+	var joystick_node = get_node_or_null(joystick_path)
+	
+	if joystick_node:
+		player.joystick = joystick_node
+		joystick_node.joystick_updated.connect(func(): player.direction = joystick_node.joystick_vector)
+		joystick_node.joystick_end.connect(func(): player.direction = Vector2.ZERO)
+	else:
+		pass #this does nothig its just for the else
+	
+	_save_player_position_periodically(player)
 
-	$mess/Timer.timeout.connect(_on_timer_timeout)
-	$mess/Timer.start()
+# Save position every few seconds
+func _save_player_position_periodically(player):
+	while is_instance_valid(player):
+		globals.update_player_position(player.position)
+		await get_tree().create_timer(2.0).timeout
+func _on_timer_timeout() -> void:
+	var available: Array = []
+	for m in mess_nodes:
+		if not m._is_active:
+			available.append(m)
+	if not available.is_empty():
+		available.pick_random().show_mess()
+		_update_stress_logic()
 
-func _process(_delta: float) -> void: 
+# This updates the stress bar, coins and stops the timer, it also await 3 sec after you interact with a mess to start spawning again
+func _on_mess_cleaned():
+	$mess/Timer.stop()
 	_update_stress_logic()
 	_update_coin_ui()
+	await get_tree().create_timer(3.0).timeout
+	$mess/Timer.start()
 
+# this is the strass bar func, where the bar goes down smoothly beacouse of tween so it dosent instantly go down
+#you can decide how much it goes down everytime a mess spawns
 func _update_stress_logic():
 	if not stress_bar:
 		return
@@ -71,22 +123,3 @@ func _update_coin_ui():
 		else:
 			coin_label.modulate = Color.WHITE 
 		
-func _on_timer_timeout() -> void:
-	var available: Array = []
-	for m in mess_nodes:
-		if not m._is_active:
-			available.append(m)
-
-	if not available.is_empty():
-		var pick: Area2D = available[randi() % available.size()]
-		pick.show_mess()
-
-func _on_mess_cleaned():
-	$mess/Timer.stop()
-	await get_tree().create_timer(3.0).timeout
-	$mess/Timer.start()
-
-func _input(event):
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_F5: 
-			DirAccess.remove_absolute(globals.SAVE_PATH)

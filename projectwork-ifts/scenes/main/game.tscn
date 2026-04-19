@@ -56,6 +56,9 @@ metadata/_edit_use_anchors_ = true
 [node name="ui_menu_male" parent="CanvasLayer" unique_id=1548518814 instance=ExtResource("5_0u50o")]
 metadata/_edit_use_anchors_ = true
 
+[node name="PlayerContainer" type="Node2D" parent="." unique_id=175387352]
+z_index = 10
+
 [node name="assets" type="Node2D" parent="." unique_id=2029774585]
 
 [node name="door" parent="assets" unique_id=1735913782 instance=ExtResource("16_swbjq")]
@@ -68,7 +71,6 @@ position = Vector2(520, -189)
 
 [node name="Timer" type="Timer" parent="mess" unique_id=232330995]
 wait_time = 10.0
-autostart = true
 
 [node name="mess" type="Node2D" parent="mess" unique_id=653632723]
 position = Vector2(745, -218)

@@ -38,8 +38,10 @@
 [ext_resource type="Texture2D" uid="uid://b6bwxeul0nc1o" path="res://assets/menu/buttons_static/button_home_static.png" id="34_mh5ls"]
 [ext_resource type="Texture2D" uid="uid://7bpmg5nkgq0i" path="res://assets/menu/buttons_pressed/button_home_pressed.png" id="35_r8yr2"]
 [ext_resource type="Texture2D" uid="uid://c8ymivtrokwsl" path="res://assets/menu/ui/ui_stress_bar.png" id="36_8ej76"]
-[ext_resource type="PackedScene" uid="uid://bolodsplnqnqu" path="res://scenes/ui/joystick/virtual_joystick.tscn" id="36_c1wyc"]
 [ext_resource type="PackedScene" uid="uid://cc6v8hc8uxl2d" path="res://scenes/main/interact.tscn" id="37_tw4xe"]
+[ext_resource type="Texture2D" uid="uid://dss01ljguvr3s" path="res://assets/menu/ui/sprite_pad_base.png" id="40_8sai1"]
+[ext_resource type="Texture2D" uid="uid://bkpqg1ekq7uuj" path="res://assets/menu/ui/sprite_pad_lever.png" id="41_e3h1q"]
+[ext_resource type="Script" uid="uid://d6o8sg7afu2d" path="res://scripts/joystick.gd" id="41_yy18p"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p76uh"]
 
@@ -222,6 +224,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_n1cxb")
 
 [node name="PopupMenu" type="MarginContainer" parent="." unique_id=1393050256]
@@ -784,14 +787,6 @@ text = "0"
 label_settings = SubResource("LabelSettings_2b6i1")
 autowrap_mode = 1
 
-[node name="VirtualJoystick" parent="." unique_id=912784726 instance=ExtResource("36_c1wyc")]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = -437.0
-offset_top = 219.0
-offset_right = -437.0
-offset_bottom = 219.0
-
 [node name="interact" parent="." unique_id=429105882 instance=ExtResource("37_tw4xe")]
 unique_name_in_owner = true
 layout_mode = 0
@@ -864,3 +859,37 @@ offset_bottom = 46.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_2t1bx")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8sai1")
 theme_override_styles/hover = SubResource("StyleBoxTexture_s1uxg")
+
+[node name="Control_Joystick" type="Control" parent="." unique_id=1210736851]
+anchors_preset = 0
+offset_left = -417.0
+offset_top = 189.0
+offset_right = -377.0
+offset_bottom = 229.0
+scale = Vector2(2.1868513, 2.1868513)
+mouse_filter = 1
+
+[node name="JoystickFemale" type="TextureRect" parent="Control_Joystick" unique_id=2022650194]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+texture = ExtResource("40_8sai1")
+script = ExtResource("41_yy18p")
+
+[node name="Joyscitk_Ring" type="TextureRect" parent="Control_Joystick/JoystickFemale" unique_id=657395130]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("41_e3h1q")
